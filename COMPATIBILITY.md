@@ -12,10 +12,15 @@ Three separate dimensions (do not merge them):
 | Tier | Meaning |
 |---|---|
 | **PROJECT_VALIDATED** | validated by the project on the reference board |
-| **COMMUNITY_CONFIRMED** | multiple independent user reports with plausible evidence |
+| **COMMUNITY_CONFIRMED** | high-quality external report with adequate diagnostics |
+| **COMMUNITY_REPORTED** | plausible user report, instrumentation incomplete |
 | **EXPERIMENTAL** | architecture-compatible, not yet validated |
 | **UNTESTED** | no data yet |
 | **FAILED** | reported not working |
+
+Results are recorded per (GPU, driver, game, API, storefront, launch method)
+combination; the same game may legitimately differ across launch environments. See
+[COMMUNITY_VALIDATION.md](docs/COMMUNITY_VALIDATION.md).
 
 ## Windows
 

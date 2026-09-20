@@ -1,15 +1,23 @@
 name: Hardware Validation Report
-description: Report whether Smooth Motion works on your GPU / driver / game
+description: Structured report - does Smooth Motion work for your GPU / driver / game / launch setup?
 title: "[Validation] "
 labels: ["validation"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks! This feeds the public compatibility table. A report never promotes a
-        configuration to `PROJECT_VALIDATED` by itself; see the tier model in
-        [COMPATIBILITY.md](https://github.com/xikarioz/Smooth-Motion-RTX30/blob/main/COMPATIBILITY.md).
-        Never upload NVIDIA DLLs, memory dumps or personal paths.
+        Thanks! This feeds the public compatibility table. Reports never promote a
+        configuration to `PROJECT_VALIDATED` by themselves - the maintainers assign an
+        evidence tier after review (see
+        [COMPATIBILITY.md](https://github.com/xikarioz/Smooth-Motion-RTX30/blob/main/COMPATIBILITY.md)).
+
+        **Same game, different result per storefront/launch method is useful data, not
+        a contradiction.** Please open one report per (game + storefront + launch
+        method) combination you actually tested.
+
+        Never upload NVIDIA DLLs, memory dumps or personal file paths.
+
+  # --- System ---
   - type: input
     id: gpu
     attributes:
@@ -17,6 +25,11 @@ body:
       placeholder: e.g. RTX 3080
     validations:
       required: true
+  - type: input
+    id: gpu_pci
+    attributes:
+      label: GPU PCI ID (if the diagnostics show it)
+      placeholder: e.g. 10DE 2216
   - type: dropdown
     id: form
     attributes:
@@ -27,7 +40,7 @@ body:
   - type: input
     id: driver
     attributes:
-      label: NVIDIA driver version
+      label: Driver version
       placeholder: e.g. 616.64 / 32.0.16.1664
     validations:
       required: true
@@ -38,65 +51,146 @@ body:
       placeholder: e.g. Windows 11 23H2 (22631)
     validations:
       required: true
+
+  # --- Title ---
   - type: input
     id: game
     attributes:
-      label: Game tested
+      label: Game
+    validations:
+      required: true
+  - type: input
+    id: game_build
+    attributes:
+      label: Game version / build (if practical)
+      placeholder: e.g. 1.31 / Steam build 12345678
+  - type: dropdown
+    id: storefront
+    attributes:
+      label: Storefront
+      options:
+        - Steam
+        - Epic
+        - Game Pass / Xbox
+        - GOG
+        - Standalone
+        - Emulator
+        - Other
     validations:
       required: true
   - type: dropdown
-    id: store
+    id: launch_method
     attributes:
-      label: Storefront
-      options: ["Steam", "Epic", "Game Pass / Xbox", "Ubisoft", "Other"]
+      label: Launch method
+      options:
+        - Steam client
+        - Direct EXE
+        - Epic launcher
+        - Xbox / Game Pass launcher
+        - GOG Galaxy
+        - Shortcut
+        - Emulator frontend
+        - Other
     validations:
       required: true
   - type: dropdown
     id: api
     attributes:
       label: Graphics API (if known)
-      options: ["D3D11", "D3D12", "Vulkan", "Not sure"]
+      options: ["D3D9", "D3D10", "D3D11", "D3D12", "Vulkan", "OpenGL", "Unknown"]
     validations:
       required: true
-  - type: textarea
-    id: "on"
+
+  # --- Presentation context ---
+  - type: input
+    id: base_fps
     attributes:
-      label: Smooth Motion ON result
-      description: What did you observe with Smooth Motion ON?
+      label: Base (pre-interpolation) FPS - approximate is fine
+      description: Interpolation quality depends strongly on base framerate. Record the actual value you saw.
+      placeholder: e.g. ~55 FPS
     validations:
       required: true
-  - type: textarea
-    id: "off"
+  - type: input
+    id: refresh
     attributes:
-      label: Smooth Motion OFF result
-      description: Same scene with Smooth Motion OFF.
+      label: Display refresh rate
+      placeholder: e.g. 144 Hz
+  - type: input
+    id: resolution
+    attributes:
+      label: Resolution
+      placeholder: e.g. 2560x1440
+  - type: dropdown
+    id: requested
+    attributes:
+      label: Smooth Motion requested
+      options: ["ON", "OFF"]
+    validations:
+      required: true
+  - type: dropdown
+    id: applied
+    attributes:
+      label: Smooth Motion applied (from State / Manager)
+      options: ["YES", "NO", "UNKNOWN"]
+    validations:
+      required: true
+  - type: dropdown
+    id: interpolation
+    attributes:
+      label: Visual interpolation observed
+      options: ["YES", "NO", "UNCERTAIN"]
     validations:
       required: true
   - type: dropdown
     id: live_toggle
     attributes:
-      label: Did you test the live ON/OFF toggle?
-      options: ["Yes - toggle worked", "Yes - toggle did not work", "No", "Not available for this session"]
+      label: Live toggle tested
+      options: ["YES - worked", "YES - did not work", "NO", "Not available for this session"]
+    validations:
+      required: true
+
+  # --- Outcome ---
+  - type: dropdown
+    id: crash
+    attributes:
+      label: Crash
+      options: ["NO", "YES"]
+    validations:
+      required: true
+  - type: dropdown
+    id: artifacts
+    attributes:
+      label: Artifacts
+      options: ["NONE", "MINOR", "MODERATE", "SEVERE"]
     validations:
       required: true
   - type: textarea
-    id: artifacts
+    id: artifact_desc
     attributes:
-      label: Artifacts / issues observed
-      description: Any visual artifacts, latency, instability or crashes, with the scene/settings.
+      label: Artifact description
+      description: What you saw, in which scene, at which settings and base FPS.
   - type: textarea
-    id: report
+    id: on_off
+    attributes:
+      label: ON vs OFF observation
+      description: What changed between Smooth Motion ON and OFF on the same scene?
+    validations:
+      required: true
+
+  # --- Diagnostics ---
+  - type: textarea
+    id: diagnostics
     attributes:
       label: Compatibility / diagnostics report
       description: |
         Paste the summary from **Export Diagnostics** in the Manager, or attach the
-        `.zip` produced by `sm86.exe report`. Do not attach NVIDIA DLLs, memory
-        dumps or personal paths.
+        `.zip` from `sm86.exe report`. Do not attach NVIDIA DLLs, memory dumps or
+        personal paths.
   - type: input
     id: media
     attributes:
-      label: Screenshot / video link (optional)
-      placeholder: Link to unmodified footage or screenshots, if you have them.
+      label: Logs / screenshots / video (optional)
+      placeholder: Links to unmodified footage or screenshots.
   - type: input
     id: version
     attributes:
@@ -106,6 +200,8 @@ body:
     id: notes
     attributes:
       label: Additional notes
+
+  # --- Required confirmations ---
   - type: checkboxes
     id: confirmations
     attributes:
@@ -114,4 +210,6 @@ body:
         - label: This report does **not** involve anti-cheat bypass, anti-cheat testing, or competitive multiplayer.
           required: true
         - label: This report contains no NVIDIA DLLs, memory dumps, credentials or personal file paths.
+          required: true
+        - label: I have not been asked to provide copyrighted firmware, keys or game files.
           required: true

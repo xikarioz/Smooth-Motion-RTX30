@@ -189,25 +189,34 @@ launch · Vulkan productization · multi-GPU targeting · signed releases. See
 
 ## Help validate more RTX 30 GPUs
 
-Own an **RTX 3050 / 3060 / 3060 Ti / 3070 / 3070 Ti / 3080 / 3080 Ti / 3090**?
-Community validation on additional Ampere SM86 systems is especially useful.
+Own an **RTX 3050 / 3060 / 3060 Ti / 3070 / 3070 Ti / 3080 / 3080 Ti** (or another
+single-GPU SM86 board)? Community validation on additional Ampere SM86 systems is
+especially useful.
 
-If Smooth Motion works on your system, submit a
+If Smooth Motion works on your system, submit the structured
 **[Hardware Validation Report](https://github.com/xikarioz/Smooth-Motion-RTX30/issues/new?template=hardware_validation.yml)**
 with:
 
-- GPU model and driver version
+- GPU model (+ PCI ID if the diagnostics show it) and driver version
 - Windows version
-- game and storefront
+- game (and build if practical)
+- storefront and launch method (the same game can differ per launch environment)
 - graphics API if known
-- Smooth Motion ON result and OFF result
+- approximate **base FPS**, resolution and refresh
+- Smooth Motion requested vs applied state, and interpolation observed
+- crash / artifact severity
 - the exported diagnostics (**Export Diagnostics** in the Manager, or `sm86.exe report`)
 - whether you tried a live toggle, and what you saw
 
+Discussion and results live in **Discussions**; use **Issues** for reproducible
+product bugs. Full schema and the evidence-tier model:
+[docs/COMMUNITY_VALIDATION.md](docs/COMMUNITY_VALIDATION.md).
+
 Reports never promote a configuration to `PROJECT_VALIDATED` by themselves. See the
 tier model in [COMPATIBILITY.md](COMPATIBILITY.md): `PROJECT_VALIDATED` (project,
-reference board) · `COMMUNITY_CONFIRMED` (independent user reports) ·
-`EXPERIMENTAL` (architecture-compatible, not yet validated) · `UNTESTED`.
+reference board) · `COMMUNITY_CONFIRMED` (high-quality external report) ·
+`COMMUNITY_REPORTED` (plausible, incomplete instrumentation) · `EXPERIMENTAL`
+(architecture-compatible, not yet validated) · `UNTESTED`.
 
 If the project was useful, consider **starring it**.
 

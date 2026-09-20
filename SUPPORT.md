@@ -59,10 +59,13 @@ clear reason.
 |---|---|
 | `PROJECT_VALIDATED` | validated by the project on the reference board |
 | `COMMUNITY_CONFIRMED` | multiple independent user reports with plausible evidence |
+| `COMMUNITY_REPORTED` | plausible user report, instrumentation incomplete |
 | `EXPERIMENTAL` | architecture-compatible, not yet validated |
 | `UNTESTED` | no data yet |
 
-A single user report never promotes a configuration to `PROJECT_VALIDATED`.
+A single user report never promotes a configuration to `PROJECT_VALIDATED`. See
+[COMMUNITY_VALIDATION.md](docs/COMMUNITY_VALIDATION.md) for the report schema and
+the storefront / launch-method / base-FPS dimensions.
 
 ## Reporting results
 
