@@ -114,8 +114,12 @@ the live **NOW PLAYING** control.
 
 ![Smooth Motion SM86 Manager](assets/manager-top.png)
 
-The Setup.exe installer and a short **Smooth Motion ON → OFF → ON** same-scene clip
-are being captured (real footage, no synthesized comparisons).
+The **installer** (real v0.4.2 Setup.exe):
+
+![Smooth Motion SM86 installer](assets/setup-welcome.png)
+
+A short **Smooth Motion ON → OFF → ON** same-scene clip is being captured (real
+footage, no synthesized comparisons).
 
 ## Roadmap
 
