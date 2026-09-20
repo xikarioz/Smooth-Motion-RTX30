@@ -108,9 +108,14 @@ Details and tiers: [SUPPORT.md](SUPPORT.md) · [COMPATIBILITY.md](COMPATIBILITY.
 
 ## Screenshots & demo
 
-The Manager and Setup screenshots and a short ON/OFF clip are being captured —
-see the capture checklist in the repository's marketing plan. Everything shown
-will be a real capture; no synthesized comparisons.
+The real **Smooth Motion SM86 Manager** on the validated system (RTX 3090 + driver
+616.64): automatic GPU/driver detection, compatibility status, the master switch and
+the live **NOW PLAYING** control.
+
+![Smooth Motion SM86 Manager](assets/manager-top.png)
+
+The Setup.exe installer and a short **Smooth Motion ON → OFF → ON** same-scene clip
+are being captured (real footage, no synthesized comparisons).
 
 ## Roadmap
 
