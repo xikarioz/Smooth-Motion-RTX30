@@ -2,30 +2,67 @@
   <img src="assets/banner.png" alt="Smooth Motion SM86" width="900">
 </p>
 
-# Smooth Motion SM86
+# Smooth Motion SM86 — NVIDIA Smooth Motion for RTX 30 Series
 
-**Driver-level NVIDIA Smooth Motion for RTX 30-series (Ampere SM86).**
+**NVIDIA Smooth Motion on RTX 30-series / Ampere SM86. One installer. No per-game frame-generation integration required.**
 
-Bring NVIDIA's NvPresent / Smooth Motion frame-interpolation path to Ampere SM86
-GPUs where NVIDIA does not currently expose it — as a one-click Windows utility.
+Smooth Motion SM86 enables NVIDIA's driver-level **NvPresent / Smooth Motion**
+frame-interpolation path on Ampere SM86 GPUs where NVIDIA does not currently
+expose it — as a one-click Windows utility.
 
-> **Not a DLSS Frame Generation mod.** It targets NVIDIA's driver-level
-> NvPresent / Smooth Motion path.
+> **Not a DLSS Frame Generation mod.**
+> It uses NVIDIA's presentation-level Smooth Motion path instead of requiring a
+> game's Streamline / DLSS-G integration.
 
 **⬇ [Download for Windows — Consumer Preview](https://github.com/xikarioz/SmoothMotionSM86/releases/latest)**
 
-RTX 30-series · SM86 · D3D11 · D3D12 · Experimental Vulkan · Windows 10/11 x64
+RTX 30 / SM86 · D3D11 · D3D12 · Experimental Vulkan · Windows 10/11 x64
 
 ![Latest release](https://img.shields.io/github/v/release/xikarioz/SmoothMotionSM86?label=release&color=3fae6a)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6)
 ![GPU](https://img.shields.io/badge/GPU-RTX%2030%20%2F%20SM86-76B900)
 ![Status](https://img.shields.io/badge/status-Consumer%20Preview-orange)
 
-Target architecture: **RTX 30-series / Ampere SM86**. **RTX 3090 + driver 616.64 is
-physically validated.** Other single-GPU SM86 RTX 30 boards are **experimental**
-where the exact driver/profile is accepted — not "unsupported".
+Target architecture: **RTX 30-series / Ampere SM86.** The **RTX 3090 + driver
+616.64** is physically validated; other single-GPU SM86 RTX 30 boards are
+**experimental** where the exact driver/profile is accepted — not "unsupported".
+
+**Tested in 16 real games across multiple engines and launch environments —
+including D3D11, D3D12 and Game Pass titles.**
 
 ---
+
+## See it working
+
+A real same-scene **Smooth Motion ON → OFF → ON** clip is being captured — real
+footage, no synthesized comparisons and no playback-speed changes. This note will
+be replaced by the clip once recorded.
+
+## Tested in real games
+
+| Game | Test status |
+|---|---|
+| Assassin's Creed Origins | ✅ Smooth Motion observed working |
+| Assassin's Creed Odyssey | ✅ Runtime / live ON → OFF → ON validation |
+| Black Myth: Wukong | ✅ Smooth Motion observed working |
+| Resident Evil 4 | ✅ Smooth Motion observed working |
+| Resident Evil Requiem | ✅ Smooth Motion observed working |
+| Alan Wake 2 | ✅ Smooth Motion observed working |
+| Cyberpunk 2077 | ✅ Smooth Motion observed working |
+| The Last of Us | ✅ Smooth Motion observed working |
+| Hogwarts Legacy | ✅ Smooth Motion observed working / measurement workload |
+| Clair Obscur: Expedition 33 — Game Pass | ✅ Smooth Motion observed working |
+| Marvel's Spider-Man 2 | ✅ Smooth Motion observed working |
+| Hades | ✅ Smooth Motion observed working |
+| Until Dawn | ✅ Smooth Motion observed working |
+| Kingdom Come: Deliverance II | ✅ Smooth Motion observed working |
+| Persona 3 Reload | ✅ Smooth Motion observed working |
+| Pragmata | ✅ Smooth Motion observed working |
+
+> **Evidence note:** "Observed working" means Smooth Motion was enabled and its
+> effect was directly observed during real gameplay. It does not imply that every
+> title received the same level of instrumentation or independent frame-content
+> validation.
 
 ## Quick start
 
@@ -63,18 +100,6 @@ Neutral, one line each:
 Different integration layer, different adaptation point. This project works with
 the driver's presentation backend, not the game's DLSS-FG integration.
 
-## Why should I trust this?
-
-- **No NVIDIA binary redistribution** — it derives what it needs from your own
-  installed driver.
-- **DriverStore untouched** — the original driver files are never modified.
-- **Fail-closed** — unknown driver/layout → no patch, and you're told why.
-- **Reversible** — per-version install, rollback, uninstall.
-- **Privacy** — offline, no telemetry, no accounts; see [PRIVACY.md](PRIVACY.md).
-- **Checksums published** — verify the download against `SHA256SUMS.txt`.
-- **Unsigned Consumer Preview** — SmartScreen may prompt; the SHA-256 is the
-  integrity anchor.
-
 ## Compatibility
 
 Three separate dimensions, kept distinct on purpose:
@@ -93,6 +118,32 @@ Three separate dimensions, kept distinct on purpose:
 
 Details and tiers: [SUPPORT.md](SUPPORT.md) · [COMPATIBILITY.md](COMPATIBILITY.md)
 
+## Validation
+
+The compatibility engine is proprietary, so the evidence is documented publicly
+instead. **[VALIDATION.md](VALIDATION.md)** covers the golden system, the compact
+adaptation, runtime validation and the project's evidence tiers.
+
+Summary: on the validated **RTX 3090 / driver 616.64** golden build the adaptation
+is **41 modified sites / 61 bytes total** — 20 compatible non-FP8 module targets
+adapted, **17 FP8-targeted modules deliberately excluded**, and no tested non-FP8
+SASS instruction rewriting was required. The current research engine also
+reproduces that golden configuration at runtime, including transform parity,
+transactional rollback and repeated live state transitions. D3D12 active-engine
+runtime evidence remains inconclusive; D3D11 is the validated live path.
+
+## Safety & trust
+
+- **No NVIDIA binary redistribution** — it derives what it needs from your own
+  installed driver.
+- **DriverStore untouched** — the original driver files are never modified.
+- **Fail-closed** — unknown driver/layout → no patch, and you're told why.
+- **Reversible** — per-version install, rollback, uninstall.
+- **Privacy** — offline, no telemetry, no accounts; see [PRIVACY.md](PRIVACY.md).
+- **Checksums published** — verify the download against `SHA256SUMS.txt`.
+- **Unsigned Consumer Preview** — SmartScreen may prompt; the SHA-256 is the
+  integrity anchor.
+
 ## Known limitations
 
 - Unsigned Consumer Preview — SmartScreen may prompt; verify the SHA-256.
@@ -106,7 +157,7 @@ Details and tiers: [SUPPORT.md](SUPPORT.md) · [COMPATIBILITY.md](COMPATIBILITY.
 - Higher base FPS is strongly recommended; very low base FPS increases artifacts
   and perceived latency.
 
-## Screenshots & demo
+## Screenshots
 
 The real **Smooth Motion SM86 Manager** on the validated system (RTX 3090 + driver
 616.64): automatic GPU/driver detection, compatibility status, the master switch and
@@ -120,9 +171,6 @@ is installed:
 ![Smooth Motion SM86 installer compatibility page](assets/setup-compat.png)
 
 *A real v0.4.3 Setup run on the validated RTX 3090 + driver 616.64.*
-
-A short **Smooth Motion ON → OFF → ON** same-scene clip is being captured (real
-footage, no synthesized comparisons).
 
 ## Roadmap
 
