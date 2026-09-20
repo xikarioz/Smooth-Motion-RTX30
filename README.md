@@ -14,11 +14,11 @@ expose it — as a one-click Windows utility.
 > It uses NVIDIA's presentation-level Smooth Motion path instead of requiring a
 > game's Streamline / DLSS-G integration.
 
-**⬇ [Download for Windows — Consumer Preview](https://github.com/xikarioz/SmoothMotionSM86/releases/latest)**
+**⬇ [Download for Windows — Consumer Preview](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest)**
 
 RTX 30 / SM86 · D3D11 · D3D12 · Experimental Vulkan · Windows 10/11 x64
 
-![Latest release](https://img.shields.io/github/v/release/xikarioz/SmoothMotionSM86?label=release&color=3fae6a)
+![Latest release](https://img.shields.io/github/v/release/xikarioz/Smooth-Motion-RTX30?label=release&color=3fae6a)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6)
 ![GPU](https://img.shields.io/badge/GPU-RTX%2030%20%2F%20SM86-76B900)
 ![Status](https://img.shields.io/badge/status-Consumer%20Preview-orange)
@@ -66,7 +66,7 @@ be replaced by the clip once recorded.
 
 ## Quick start
 
-1. Download **`SmoothMotionSM86-Setup.exe`** from the [latest release](https://github.com/xikarioz/SmoothMotionSM86/releases/latest).
+1. Download **`SmoothMotionSM86-Setup.exe`** from the [latest release](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest).
 2. Run it (no administrator rights, no Python, no terminal).
 3. Open **Smooth Motion SM86**.
 4. Turn **SMOOTH MOTION** on.
