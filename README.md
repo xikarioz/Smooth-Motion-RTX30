@@ -1,101 +1,106 @@
+<p align="center">
+  <img src="assets/banner.png" alt="Smooth Motion SM86" width="900">
+</p>
+
 # Smooth Motion SM86
 
-**Research-preview tool that enables NVIDIA Smooth Motion on Ampere SM86 GPUs
-(RTX 30-series) where NVIDIA does not currently expose it.**
+**Driver-level NVIDIA Smooth Motion for RTX 30-series (Ampere SM86).**
 
-This is a downloadable product, not an open-source project. Source code and the
-internal adaptation method are not published.
+Bring NVIDIA's NvPresent / Smooth Motion frame-interpolation path to Ampere SM86
+GPUs where NVIDIA does not currently expose it — as a one-click Windows utility.
 
-> **This is not a DLSS Frame Generation mod.** It targets NVIDIA's driver-level
+> **Not a DLSS Frame Generation mod.** It targets NVIDIA's driver-level
 > NvPresent / Smooth Motion path.
 
-- Validated primarily on **NVIDIA RTX 3090** with driver **616.64**
-  (`32.0.16.1664`), single active NVIDIA adapter, Windows 10/11 x64.
-- The tool derives everything it needs from **your own installed NVIDIA driver**.
-- It does **not** redistribute any NVIDIA binary and **does not** modify the
-  DriverStore.
-- Everything is reversible: rollback and uninstall are built in.
+**⬇ [Download for Windows — Consumer Preview](https://github.com/xikarioz/SmoothMotionSM86/releases/latest)**
 
-**Status: `UNSIGNED_RESEARCH_PREVIEW`** — this build is not code-signed; Windows
-SmartScreen may prompt. Verify the SHA-256 published with the release.
+RTX 30-series · SM86 · D3D11 · D3D12 · Experimental Vulkan · Windows 10/11 x64
 
-## Download and install
+![Latest release](https://img.shields.io/github/v/release/xikarioz/SmoothMotionSM86?label=release&color=3fae6a)
+![Platform](https://img.shields.io/badge/platform-Windows-0078D6)
+![GPU](https://img.shields.io/badge/GPU-RTX%2030%20%2F%20SM86-76B900)
+![Status](https://img.shields.io/badge/status-Consumer%20Preview-orange)
 
-**No Python is required.** The package is self-contained.
+Validated on **RTX 3090 + driver 616.64**. Other RTX 30 / SM86 boards are
+architecture-compatible and **experimental** until physically validated.
 
-1. Download `SmoothMotionSM86-<version>-win64.zip` from the official Releases page
-   and verify its SHA-256 against the published checksum.
-2. Extract the ZIP anywhere.
-3. Run `Instalar.cmd`.
-   - It checks your GPU and driver first. Unknown or unsupported configurations
-     are refused — nothing is patched unless the environment matches a validated
-     profile.
-   - It then prepares the adapted runtime state locally from your driver and
-     creates a **Smooth Motion SM86** Start Menu entry.
-4. Open **Smooth Motion SM86** from the Start Menu.
+---
 
-See [INSTALL.md](INSTALL.md) for details.
+## Quick start
 
-## Using it
+1. Download **`SmoothMotionSM86-Setup.exe`** from the [latest release](https://github.com/xikarioz/SmoothMotionSM86/releases/latest).
+2. Run it (no administrator rights, no Python, no terminal).
+3. Open **Smooth Motion SM86**.
+4. Turn **SMOOTH MOTION** on.
+5. Pick a game and press **PLAY**.
 
-- In the app: check your PC → prepare → pick your game → launch → status / ON / OFF.
-- Disable the game's **native** frame generation in its menu; do not stack other
-  frame-generation mods.
-- The feature can be toggled ON/OFF in a running game to compare.
-- Higher base framerate is strongly recommended. At very low base framerates —
-  around 20 FPS in some of our tests — interpolation artifacts and perceived
-  latency increased substantially. There is no claim that Smooth makes 20 FPS feel
-  like native 40 FPS.
+Full guide: [INSTALL.md](INSTALL.md) · Problems: [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 
-## Using the Manager
+## What you get
 
-Open **Smooth Motion SM86** from the Start Menu (or run `SmoothMotionSM86.exe`):
+A gamer-first manager that does the hard part for you:
 
-- The top panel detects your GPU, driver and compatibility automatically.
-- **SMOOTH MOTION [ON/OFF]** is the master switch — one click, applied to future
-  launches.
-- **Scan Games** lists titles found in Steam, Epic and Game Pass.
-- Select a game and press **Enable/Disable Game** for its own switch, then **PLAY**.
-- If Smooth Motion is OFF for a game, Play launches it normally (no modification).
+- **Automatic GPU + driver detection** with a plain-language compatibility status.
+- **One-click master switch** and **per-game switches**.
+- **Game library** scanning Steam, Epic and Game Pass — pick a game and Play.
+- **Fail-closed**: if your driver binary isn't recognized, nothing is modified.
+- **Reversible**: rollback and uninstall are built in. The DriverStore is never
+  touched and no NVIDIA binary is redistributed.
 
-No terminal is needed for any of this.
+## How is this different from DLSS-G mods?
 
-## Supported at a glance
+Neutral, one line each:
+
+- **Smooth Motion SM86**: game → NVIDIA presentation path → **NvPresent / Smooth Motion** → generated frames.
+- **DLSS Frame Generation mods**: game with DLSS-FG integration → Streamline / NGX → **DLSS-G** → generated frames.
+
+Different integration layer, different adaptation point. This project works with
+the driver's presentation backend, not the game's DLSS-FG integration.
+
+## Why should I trust this?
+
+- **No NVIDIA binary redistribution** — it derives what it needs from your own
+  installed driver.
+- **DriverStore untouched** — the original driver files are never modified.
+- **Fail-closed** — unknown driver/layout → no patch, and you're told why.
+- **Reversible** — per-version install, rollback, uninstall.
+- **Privacy** — offline, no telemetry, no accounts; see [PRIVACY.md](PRIVACY.md).
+- **Checksums published** — verify the download against `SHA256SUMS.txt`.
+- **Unsigned Consumer Preview** — SmartScreen may prompt; the SHA-256 is the
+  integrity anchor.
+
+## Compatibility
 
 | Configuration | Status |
 |---|---|
-| RTX 3090 + driver 616.64, native D3D11 / D3D12, direct EXE launch | Validated |
-| Other Ampere SM86 GPUs (e.g. RTX 3080 / 3060 family) with the same driver | Experimental |
-| Other driver versions | Not supported (refused) |
-| 32-bit titles, anti-cheat-protected/competitive titles, multi-GPU | Not supported |
-| Windows Vulkan | Experimental |
+| RTX 3090 + driver 616.64, D3D11 / D3D12 | Validated |
+| Other RTX 30 / SM86 boards, same driver | Architecture compatible — experimental |
+| Other driver versions | Not yet supported (refused) |
+| 32-bit, anti-cheat, multi-GPU | Not supported |
 
-Full details: [docs/SUPPORT.md](docs/SUPPORT.md).
+Details and tiers: [SUPPORT.md](SUPPORT.md) · [COMPATIBILITY.md](COMPATIBILITY.md)
 
-## Safety, privacy, removal
+## Screenshots & demo
 
-- No NVIDIA binary is redistributed; the DriverStore is never modified.
-- No telemetry, no network access, no accounts.
-- Diagnostics you export are local files; nothing is uploaded automatically.
-- Uninstall with `Uninstall.cmd` (or from the app). See [SECURITY.md](SECURITY.md)
-  and [PRIVACY.md](PRIVACY.md).
+The Manager and Setup screenshots and a short ON/OFF clip are being captured —
+see the capture checklist in the repository's marketing plan. Everything shown
+will be a real capture; no synthesized comparisons.
 
-## Single-player / offline only
+## Roadmap
 
-Use only with single-player or offline titles. Do not use with anti-cheat
-protected or competitive multiplayer games. You are responsible for where you use
-this tool.
+More RTX 30 physical validation · more driver profiles · Game Pass / Epic seamless
+launch · Vulkan productization · multi-GPU targeting · signed releases. See
+[ROADMAP.md](ROADMAP.md).
+
+## If it works on your system
+
+If Smooth Motion works on your RTX 30 system, consider **starring the project** and
+submitting your GPU/driver result so others can see what's validated.
 
 ## License
 
-Proprietary, source-not-published. Personal use is permitted; redistribution and
-repackaging are not. See [LICENSE.txt](LICENSE.txt).
+Proprietary, source-not-published. Personal use permitted; no redistribution or
+repackaging. See [EULA.txt](EULA.txt).
 
 NVIDIA Smooth Motion, NvPresent and CUDA are NVIDIA technologies, not included
-here, and this project is not affiliated with or endorsed by NVIDIA.
-
-## Reporting issues
-
-Use the official repository's issue tracker. Include your GPU, driver version,
-Windows version, game, API, and the diagnostic bundle exported from the app. Never
-upload NVIDIA binaries. See [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
+here. This is an independent project, not affiliated with or endorsed by NVIDIA.
