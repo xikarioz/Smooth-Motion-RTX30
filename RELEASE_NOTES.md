@@ -1,4 +1,19 @@
-# Release notes — Smooth Motion SM86 0.4.0 (consumer preview)
+# Release notes — Smooth Motion SM86 0.4.1 (consumer preview)
+
+## What's new in 0.4.1
+
+- **Live ON/OFF control for a running game.** When a supported game is injected and
+  running, the Manager shows a **NOW PLAYING** card with a one-click ON/OFF button
+  that changes the running game immediately — no terminal, no restart. Ideal for a
+  same-scene A/B/A comparison.
+- **Optional global hotkey** (default **Ctrl + Alt + S**, configurable in settings)
+  to toggle live without leaving the game.
+- Live control uses the same validated runtime engine as the CLI (`on`/`off`) and
+  verifies the change with a read-back before reporting success.
+- Live toggle is validated for D3D11 and D3D12. It is **not** enabled for Vulkan
+  sessions (shown as "not available for this session").
+- Distribution-only packaging, manager, game library and driver-change detection
+  as in 0.4.0.
 
 ## What this is
 
