@@ -28,7 +28,10 @@ is redistributed and the DriverStore is never modified.
 - Architecture compatible (experimental): other single-GPU RTX 30 / SM86 boards
   with the same driver — same architecture, not physically validated.
 - Experimental: Windows Vulkan.
-- Not supported: other drivers, 32-bit titles, anti-cheat titles, multi-GPU.
+- Not supported: other driver versions, 32-bit titles, anti-cheat titles.
+- Multi-GPU: the current Consumer Preview expects a single CUDA/NVIDIA target
+  device. Explicit rendering-GPU selection is planned for a later release (a
+  manager device-selection limitation, not a hardware incompatibility).
 
 ## Known limitations
 

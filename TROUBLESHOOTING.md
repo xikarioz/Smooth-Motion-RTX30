@@ -2,9 +2,18 @@
 
 ## Compatibility check says my GPU/driver is not supported
 
-Correct behavior — the tool refuses instead of guessing. It supports a single
-validated configuration (RTX 3090 + driver 616.64). Multiple NVIDIA adapters,
-other driver versions and non-SM86 GPUs are refused.
+The tool refuses instead of guessing. It physically validates a single board
+(RTX 3090) with driver 616.64; other driver versions and non-SM86 GPUs are refused.
+If you have a single RTX 30 / SM86 GPU with the validated driver, it is admitted
+as **experimental** when the exact driver/profile is accepted (not "unsupported").
+
+## I have two GPUs (multi-GPU)
+
+The current Consumer Preview expects a single CUDA/NVIDIA target device. Explicit
+rendering-GPU selection is planned for a later release. This is a **manager
+device-selection limitation, not a hardware incompatibility** — the target
+architecture (Ampere SM86 / RTX 30-series) is unaffected by how many adapters are
+installed.
 
 ## The game launches but I see no difference
 

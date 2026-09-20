@@ -21,8 +21,9 @@ RTX 30-series · SM86 · D3D11 · D3D12 · Experimental Vulkan · Windows 10/11 
 ![GPU](https://img.shields.io/badge/GPU-RTX%2030%20%2F%20SM86-76B900)
 ![Status](https://img.shields.io/badge/status-Consumer%20Preview-orange)
 
-Validated on **RTX 3090 + driver 616.64**. Other RTX 30 / SM86 boards are
-architecture-compatible and **experimental** until physically validated.
+Target architecture: **RTX 30-series / Ampere SM86**. **RTX 3090 + driver 616.64 is
+physically validated.** Other single-GPU SM86 RTX 30 boards are **experimental**
+where the exact driver/profile is accepted — not "unsupported".
 
 ---
 
@@ -71,14 +72,34 @@ the driver's presentation backend, not the game's DLSS-FG integration.
 
 ## Compatibility
 
+Three separate dimensions, kept distinct on purpose:
+
+- **Hardware compatibility:** Ampere **SM86 / RTX 30-series** is the target architecture.
+- **Physical validation:** only the **RTX 3090 + driver 616.64** is physically validated.
+- **Other single-GPU SM86 RTX 30 boards** are **technically admitted when the exact
+  driver/profile is accepted**, and **experimental** until physically validated.
+
 | Configuration | Status |
 |---|---|
-| RTX 3090 + driver 616.64, D3D11 / D3D12 | Validated |
-| Other RTX 30 / SM86 boards, same driver | Architecture compatible — experimental |
-| Other driver versions | Not yet supported (refused) |
-| 32-bit, anti-cheat, multi-GPU | Not supported |
+| RTX 3090 + driver 616.64, D3D11 / D3D12 | **Physically validated** |
+| Other single-GPU RTX 30 / SM86 boards, same driver | **Experimental** (architecture-compatible; admitted when the exact driver/profile is accepted) |
+| Other driver versions | Not yet supported (refused, nothing modified) |
+| 32-bit titles, anti-cheat protected titles | Not supported |
 
 Details and tiers: [SUPPORT.md](SUPPORT.md) · [COMPATIBILITY.md](COMPATIBILITY.md)
+
+## Known limitations
+
+- Unsigned Consumer Preview — SmartScreen may prompt; verify the SHA-256.
+- Storefront titles that relaunch into a new process (some Game Pass / Epic) are
+  not reliably followed yet.
+- Windows Vulkan is experimental; no in-game toggle there.
+- **Multi-GPU systems: the current Consumer Preview expects a single CUDA/NVIDIA
+  target device. Explicit rendering-GPU selection is planned for a later release.**
+  This is a manager device-selection limitation, **not** a hardware
+  incompatibility.
+- Higher base FPS is strongly recommended; very low base FPS increases artifacts
+  and perceived latency.
 
 ## Screenshots & demo
 
