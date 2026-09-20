@@ -3,17 +3,19 @@
 ## What this is
 
 An unsigned research-preview tool that enables NVIDIA Smooth Motion on Ampere
-SM86 GPUs, validated primarily on an RTX 3090 with driver 616.64. The tool derives
-the required runtime state from your own installed NVIDIA driver; no NVIDIA binary
+SM86 GPUs (RTX 30-series), validated primarily on an RTX 3090 with driver 616.64.
+It derives what it needs from your own installed NVIDIA driver; no NVIDIA binary
 is redistributed and the DriverStore is never modified.
 
-## What changed in 0.4.0
+## What's new in 0.4.0
 
-- Distribution-only packaging: the release no longer ships a readable profile
-  file; the required release profile data is embedded inside the compiled product.
-- Research and driver-analysis tooling is not included in the consumer build.
-- User-facing documentation, privacy statement and a proprietary end-user license
-  replace the previous source-oriented docs.
+- **Smooth Motion Manager** with a one-click master switch and a per-game switch.
+- **Game library** scanning (Steam, Epic, Game Pass) — pick a game and press Play.
+- **Automatic system detection** with consumer-language compatibility status.
+- **Driver-change detection**: an old profile is never applied to a changed driver.
+- **Distribution-only packaging**: the release profile data is embedded in the
+  compiled product; no readable recipe file ships.
+- Proprietary end-user license (source not published).
 
 ## Validated environment
 
@@ -22,15 +24,17 @@ is redistributed and the DriverStore is never modified.
 
 ## Status
 
-- Validated: selected D3D11 and D3D12 titles (direct EXE launch).
-- Experimental: Windows Vulkan; other SM86 boards; other driver versions are
-  refused.
-- Not supported: 32-bit titles, anti-cheat/competitive titles, multi-GPU.
+- Validated: selected D3D11/D3D12 titles (direct EXE launch).
+- Architecture compatible (experimental): other single-GPU RTX 30 / SM86 boards
+  with the same driver — same architecture, not physically validated.
+- Experimental: Windows Vulkan.
+- Not supported: other drivers, 32-bit titles, anti-cheat titles, multi-GPU.
 
 ## Known limitations
 
 - Unsigned build (`UNSIGNED_RESEARCH_PREVIEW`).
-- Games that relaunch into a new process lose per-process activation.
-- No in-game toggle on the experimental Vulkan path.
-- Higher base FPS strongly recommended (low base FPS increases artifacts and
-  perceived latency).
+- Storefront titles that relaunch into a new process (Game Pass / some Epic) are
+  not reliably followed yet.
+- No in-game toggle on the Vulkan path.
+- Higher base FPS strongly recommended; very low base FPS increases artifacts and
+  perceived latency.

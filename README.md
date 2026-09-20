@@ -47,6 +47,19 @@ See [INSTALL.md](INSTALL.md) for details.
   latency increased substantially. There is no claim that Smooth makes 20 FPS feel
   like native 40 FPS.
 
+## Using the Manager
+
+Open **Smooth Motion SM86** from the Start Menu (or run `SmoothMotionSM86.exe`):
+
+- The top panel detects your GPU, driver and compatibility automatically.
+- **SMOOTH MOTION [ON/OFF]** is the master switch — one click, applied to future
+  launches.
+- **Scan Games** lists titles found in Steam, Epic and Game Pass.
+- Select a game and press **Enable/Disable Game** for its own switch, then **PLAY**.
+- If Smooth Motion is OFF for a game, Play launches it normally (no modification).
+
+No terminal is needed for any of this.
+
 ## Supported at a glance
 
 | Configuration | Status |
