@@ -1,10 +1,7 @@
-SMOOTH MOTION SM86 — END USER LICENSE AGREEMENT (DRAFT)
+SMOOTH MOTION SM86
+END USER LICENSE AGREEMENT
 
-Version: 0.4.0
 Copyright (c) 2026 Smooth Motion SM86 project. All rights reserved.
-
-THIS IS A DRAFT FOR LEGAL REVIEW. It is provided so the author can confirm the
-intended terms before public distribution. It is not legal advice.
 
 1. LICENSED MATERIAL
    This license applies to the compiled software, the accompanying documentation
@@ -43,13 +40,13 @@ intended terms before public distribution. It is not legal advice.
 6. REVERSE ENGINEERING
    To the extent permitted by applicable law, you agree not to reverse engineer,
    decompile or disassemble the Software except where such restriction is
-   prohibited by law. (Enforceability of this clause varies by jurisdiction.)
+   prohibited by law.
 
 7. ACCEPTANCE OF RISK; NO WARRANTY
    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. YOU USE THE SOFTWARE AT
-   YOUR OWN RISK. IT IS AN EXPERIMENTAL RESEARCH-PREVIEW BUILD.
+   YOUR OWN RISK. IT IS AN EXPERIMENTAL CONSUMER PREVIEW BUILD.
 
 8. LIMITATION OF LIABILITY
    TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE AUTHOR SHALL NOT BE LIABLE FOR ANY
@@ -59,5 +56,6 @@ intended terms before public distribution. It is not legal advice.
    This license terminates automatically if you breach it. On termination you must
    stop using and remove the Software.
 
-10. GOVERNING LAW
-    To be determined by applicable law; this draft does not assert a jurisdiction.
+10. SEVERABILITY
+    If any provision of this agreement is held unenforceable, the remaining
+    provisions remain in effect.

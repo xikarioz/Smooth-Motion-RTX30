@@ -5,6 +5,9 @@ This project's compatibility engine is proprietary, so this document publishes t
 hook internals, classifier internals or NVIDIA binaries — only high-level,
 public-safe results.
 
+This is the **canonical source** for the project's evidence-tier wording. Other
+documents link here instead of restating nuanced claims.
+
 ## Golden system
 
 | Item | Value |
@@ -76,6 +79,9 @@ The project never conflates these states:
   "instrumentally validated" (automated frame-content evidence).
 - A validated (GPU, driver, API, launch method, game) combination is not generalised
   to untested combinations.
+- Community tiers: `PROJECT_VALIDATED` · `COMMUNITY_CONFIRMED` · `EXPERIMENTAL` ·
+  `UNTESTED`. A single user report never promotes a configuration to
+  `PROJECT_VALIDATED`.
 
 See [SUPPORT.md](SUPPORT.md), [COMPATIBILITY.md](COMPATIBILITY.md) and
 [RELEASE_NOTES.md](RELEASE_NOTES.md) for product tiers.

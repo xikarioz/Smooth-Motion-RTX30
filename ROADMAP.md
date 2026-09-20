@@ -2,13 +2,22 @@
 
 Public scope only. Dates are not promised.
 
-## Now
+## Completed (shipped)
 
-- Consumer Preview: Manager, Setup.exe, one-click ON/OFF, game library.
-- RTX 3090 + driver 616.64 validated.
+- Consumer Preview product: **Smooth Motion SM86** manager, `Setup.exe`, one-click
+  ON/OFF.
+- **Game library** scanning Steam, Epic and Game Pass.
+- **System tray** controls (status, current game, toggle, open Manager, exit).
+- **Optional global hotkey** (default **Ctrl + Alt + S**).
+- **Live ON/OFF toggle** for a running game — D3D11 instrumentally validated live
+  path; D3D12 observed working (see [VALIDATION.md](VALIDATION.md)).
+- **Native Windows notifications** on live toggle.
+- **Installer System Compatibility page** (GPU / driver / architecture / status).
+- **Driver-change detection**: an old profile is never applied to a changed driver.
 
 ## Next
 
+- **Real ON → OFF → ON demo capture** (unmodified gameplay footage).
 - **More RTX 30 physical validation** (community reports → reviewed entries).
 - **More NVIDIA driver profiles** (request your driver; profiles are produced
   privately and delivered as compatibility updates).
@@ -19,7 +28,6 @@ Public scope only. Dates are not promised.
 
 - Multi-GPU targeting.
 - Signed releases (remove SmartScreen friction).
-- Optional tray application.
 
 ## Not on this roadmap
 

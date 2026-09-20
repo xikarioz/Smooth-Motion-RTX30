@@ -1,5 +1,24 @@
 # Release notes — Smooth Motion SM86 0.4.3 (installer UX update)
 
+> **Packaging note:** in the v0.4.3 release the portable runtime asset remains
+> `SmoothMotionSM86-0.4.2-win64.zip`; v0.4.3 is an installer/presentation update
+> over the unchanged 0.4.2 engine. The asset name is intentional, not stale.
+
+## Evidence tiers (read this first)
+
+The project keeps these distinct and never merges them:
+
+- **D3D11 — instrumentally validated live path.** Live ON/OFF/ON was validated on
+  the golden configuration with runtime instrumentation.
+- **D3D12 — observed working in real games, active-engine instrumentation
+  inconclusive.** Smooth Motion is observed working in real D3D12 games, but current
+  dynamic-engine runtime instrumentation is **inconclusive** because no target
+  module-load traffic was observed in the latest active-engine validation window.
+  This is **not** classified as a regression.
+- **Vulkan — experimental.** No in-game toggle.
+
+Canonical source: [VALIDATION.md](VALIDATION.md).
+
 ## What's new in 0.4.3
 
 - **New System Compatibility page in the installer.** Before anything is installed,
@@ -28,8 +47,9 @@ This release is an installer/UX improvement.
   state not verified).
 - Tray, Manager, hotkey and CLI remain **one backend** (`runtime.toggle`); every
   surface reads the same verified state.
-- Live toggle remains D3D11/D3D12 validated; Vulkan sessions show "live toggle not
-  available" (never faked).
+- Live toggle: **D3D11 instrumentally validated**; **D3D12 observed working, with
+  active-engine instrumentation currently inconclusive** (see *Evidence tiers*).
+  Vulkan sessions show "live toggle not available" (never faked).
 
 ## What's new in 0.4.1
 
@@ -41,8 +61,9 @@ This release is an installer/UX improvement.
   to toggle live without leaving the game.
 - Live control uses the same validated runtime engine as the CLI (`on`/`off`) and
   verifies the change with a read-back before reporting success.
-- Live toggle is validated for D3D11 and D3D12. It is **not** enabled for Vulkan
-  sessions (shown as "not available for this session").
+- Live toggle: **D3D11 instrumentally validated**; **D3D12 observed working**
+  (active-engine instrumentation currently inconclusive). It is **not** enabled for
+  Vulkan sessions (shown as "not available for this session").
 - Distribution-only packaging, manager, game library and driver-change detection
   as in 0.4.0.
 
@@ -70,7 +91,10 @@ is redistributed and the DriverStore is never modified.
 
 ## Status
 
-- Validated: selected D3D11/D3D12 titles (direct EXE launch).
+- D3D11: selected titles, direct EXE launch — **instrumentally validated** (live
+  ON/OFF/ON on the golden configuration).
+- D3D12: selected titles — **observed working**; dynamic-engine runtime
+  instrumentation currently **inconclusive** (not a regression).
 - Architecture compatible (experimental): other single-GPU RTX 30 / SM86 boards
   with the same driver — same architecture, not physically validated.
 - Experimental: Windows Vulkan.

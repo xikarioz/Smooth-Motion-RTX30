@@ -10,14 +10,15 @@ Three separate dimensions are tracked (do not merge them):
 - **Multi-adapter product support** — whether the current manager can *select* the
   right target device when more than one GPU is present.
 
-## Validated
+## Golden configuration (physically tested)
 
 | Item | Status |
 |---|---|
 | GPU | NVIDIA RTX 3090 (GA102, Ampere SM86), single active adapter |
 | Driver | 616.64 (`32.0.16.1664`) |
 | OS | Windows 10/11 x64 |
-| Graphics API | Native D3D11 and D3D12, 64-bit, direct EXE launch |
+| D3D11 live path | **Instrumentally validated** — live ON/OFF/ON on the golden configuration |
+| D3D12 real-game path | **Observed working** — active dynamic-engine runtime instrumentation currently **inconclusive** |
 | Install / prepare / rollback / uninstall | Supported |
 
 ## Experimental
@@ -52,8 +53,21 @@ binary, the exact binary hash, the exact Windows driver version, exactly one CUD
 device, and exact SM86 compute capability. Any mismatch stops the process with a
 clear reason.
 
+## Community tiers
+
+| Tier | Meaning |
+|---|---|
+| `PROJECT_VALIDATED` | validated by the project on the reference board |
+| `COMMUNITY_CONFIRMED` | multiple independent user reports with plausible evidence |
+| `EXPERIMENTAL` | architecture-compatible, not yet validated |
+| `UNTESTED` | no data yet |
+
+A single user report never promotes a configuration to `PROJECT_VALIDATED`.
+
 ## Reporting results
 
-Community reports are welcome via the issue tracker. Include GPU, driver, Windows
-version, game, API and the exported diagnostics. Reports never promote a
-configuration to "validated" by themselves.
+Submit a
+**[Hardware Validation Report](https://github.com/xikarioz/Smooth-Motion-RTX30/issues/new?template=hardware_validation.yml)**
+with GPU, driver, Windows version, game, storefront, graphics API and the exported
+diagnostics (**Export Diagnostics** in the Manager, or `sm86.exe report`). Reports
+never promote a configuration to "validated" by themselves.

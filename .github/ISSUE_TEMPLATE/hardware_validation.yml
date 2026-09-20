@@ -1,11 +1,15 @@
 name: Hardware Validation Report
 description: Report whether Smooth Motion works on your GPU / driver / game
+title: "[Validation] "
 labels: ["validation"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks! This feeds the public compatibility table. Never upload NVIDIA DLLs, memory dumps or personal paths.
+        Thanks! This feeds the public compatibility table. A report never promotes a
+        configuration to `PROJECT_VALIDATED` by itself; see the tier model in
+        [COMPATIBILITY.md](https://github.com/xikarioz/Smooth-Motion-RTX30/blob/main/COMPATIBILITY.md).
+        Never upload NVIDIA DLLs, memory dumps or personal paths.
   - type: input
     id: gpu
     attributes:
@@ -50,30 +54,64 @@ body:
   - type: dropdown
     id: api
     attributes:
-      label: Graphics API
+      label: Graphics API (if known)
       options: ["D3D11", "D3D12", "Vulkan", "Not sure"]
     validations:
       required: true
   - type: textarea
-    id: on
+    id: "on"
     attributes:
-      label: Smooth ON result
+      label: Smooth Motion ON result
       description: What did you observe with Smooth Motion ON?
     validations:
       required: true
   - type: textarea
-    id: off
+    id: "off"
     attributes:
-      label: Smooth OFF result
+      label: Smooth Motion OFF result
       description: Same scene with Smooth Motion OFF.
     validations:
       required: true
-  - type: textarea
-    id: issues
+  - type: dropdown
+    id: live_toggle
     attributes:
-      label: Artifacts / issues / notes
+      label: Did you test the live ON/OFF toggle?
+      options: ["Yes - toggle worked", "Yes - toggle did not work", "No", "Not available for this session"]
+    validations:
+      required: true
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Artifacts / issues observed
+      description: Any visual artifacts, latency, instability or crashes, with the scene/settings.
+  - type: textarea
+    id: report
+    attributes:
+      label: Compatibility / diagnostics report
+      description: |
+        Paste the summary from **Export Diagnostics** in the Manager, or attach the
+        `.zip` produced by `sm86.exe report`. Do not attach NVIDIA DLLs, memory
+        dumps or personal paths.
+  - type: input
+    id: media
+    attributes:
+      label: Screenshot / video link (optional)
+      placeholder: Link to unmodified footage or screenshots, if you have them.
   - type: input
     id: version
     attributes:
       label: App / diagnostics version
-      placeholder: e.g. 0.4.0
+      placeholder: e.g. 0.4.3
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: This report does **not** involve anti-cheat bypass, anti-cheat testing, or competitive multiplayer.
+          required: true
+        - label: This report contains no NVIDIA DLLs, memory dumps, credentials or personal file paths.
+          required: true

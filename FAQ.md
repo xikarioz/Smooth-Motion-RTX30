@@ -25,6 +25,13 @@ No. It works fully offline. There is no telemetry.
 No. It targets NVIDIA's driver-level NvPresent / Smooth Motion path, not
 Streamline/NGX DLSS-G.
 
+**Is D3D11 validated the same way as D3D12?**
+No, and the project keeps them distinct. On the golden configuration the **D3D11
+live ON/OFF/ON path is instrumentally validated**. **D3D12** titles are **observed
+working in real games**, but current active dynamic-engine runtime instrumentation
+is **inconclusive** (no target module-load traffic was observed in the latest
+validation window; not classified as a regression). See `VALIDATION.md`.
+
 **Can I use it in online/competitive games?**
 No. Single-player/offline only. Anti-cheat protected titles are out of scope.
 
@@ -39,11 +46,12 @@ disabled, and check **State**. Games that relaunch into a new process lose the
 per-process activation.
 
 **How do I remove it?**
-Run `Uninstall.cmd`. Optionally `Uninstall.cmd -IncludeGenerated` also removes
-generated runtime copies.
+Installed build: Settings → Apps → *Smooth Motion SM86*. Portable build:
+`Uninstall.cmd` (optionally `Uninstall.cmd -IncludeGenerated` to also remove
+generated runtime copies).
 
 **Can I redistribute it?**
-No. Personal use only; no redistribution or repackaging. See `LICENSE.txt`.
+No. Personal use only; no redistribution or repackaging. See `EULA.txt`.
 
 **How do I know the download is genuine?**
 Verify the SHA-256 in `SHA256SUMS.txt` against the release page. Download only from

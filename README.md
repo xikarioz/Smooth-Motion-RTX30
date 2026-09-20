@@ -34,9 +34,10 @@ including D3D11, D3D12 and Game Pass titles.**
 
 ## See it working
 
-A real same-scene **Smooth Motion ON → OFF → ON** clip is being captured — real
-footage, no synthesized comparisons and no playback-speed changes. This note will
-be replaced by the clip once recorded.
+**Real same-scene ON → OFF → ON capture coming next.**
+
+The demo will use unmodified gameplay footage, with no synthetic interpolation and
+no playback-speed manipulation.
 
 ## Tested in real games
 
@@ -111,12 +112,14 @@ Three separate dimensions, kept distinct on purpose:
 
 | Configuration | Status |
 |---|---|
-| RTX 3090 + driver 616.64, D3D11 / D3D12 | **Physically validated** |
-| Other single-GPU RTX 30 / SM86 boards, same driver | **Experimental** (architecture-compatible; admitted when the exact driver/profile is accepted) |
-| Other driver versions | Not yet supported (refused, nothing modified) |
+| RTX 3090 + 616.64 | **Physically tested golden configuration** |
+| D3D11 dynamic-engine live path | **Instrumentally validated** |
+| D3D12 real-game path | **Observed working; dynamic-engine instrumentation currently inconclusive** |
+| Other single-GPU RTX 30 / SM86 boards, accepted profile | **Experimental** |
+| Other drivers | Not yet supported (fail closed, nothing modified) |
 | 32-bit titles, anti-cheat protected titles | Not supported |
 
-Details and tiers: [SUPPORT.md](SUPPORT.md) · [COMPATIBILITY.md](COMPATIBILITY.md)
+Details and tiers: [SUPPORT.md](SUPPORT.md) · [COMPATIBILITY.md](COMPATIBILITY.md) · [VALIDATION.md](VALIDATION.md)
 
 ## Validation
 
@@ -127,10 +130,16 @@ adaptation, runtime validation and the project's evidence tiers.
 Summary: on the validated **RTX 3090 / driver 616.64** golden build the adaptation
 is **41 modified sites / 61 bytes total** — 20 compatible non-FP8 module targets
 adapted, **17 FP8-targeted modules deliberately excluded**, and no tested non-FP8
-SASS instruction rewriting was required. The current research engine also
-reproduces that golden configuration at runtime, including transform parity,
-transactional rollback and repeated live state transitions. D3D12 active-engine
-runtime evidence remains inconclusive; D3D11 is the validated live path.
+SASS instruction rewriting was required. The current research engine reproduces that
+golden configuration at runtime, including transform parity, transactional rollback
+and repeated live state transitions (300 transitions, 0 state mismatches).
+
+- **D3D11** — the live ON/OFF/ON path is **instrumentally validated** on the golden
+  configuration.
+- **D3D12** — Smooth Motion is **observed working in real D3D12 games**, but current
+  active dynamic-engine runtime instrumentation is **inconclusive** (no target
+  module-load traffic was observed in the latest active-engine validation window).
+  This is not classified as a regression.
 
 ## Safety & trust
 
@@ -178,10 +187,29 @@ More RTX 30 physical validation · more driver profiles · Game Pass / Epic seam
 launch · Vulkan productization · multi-GPU targeting · signed releases. See
 [ROADMAP.md](ROADMAP.md).
 
-## If it works on your system
+## Help validate more RTX 30 GPUs
 
-If Smooth Motion works on your RTX 30 system, consider **starring the project** and
-submitting your GPU/driver result so others can see what's validated.
+Own an **RTX 3050 / 3060 / 3060 Ti / 3070 / 3070 Ti / 3080 / 3080 Ti / 3090**?
+Community validation on additional Ampere SM86 systems is especially useful.
+
+If Smooth Motion works on your system, submit a
+**[Hardware Validation Report](https://github.com/xikarioz/Smooth-Motion-RTX30/issues/new?template=hardware_validation.yml)**
+with:
+
+- GPU model and driver version
+- Windows version
+- game and storefront
+- graphics API if known
+- Smooth Motion ON result and OFF result
+- the exported diagnostics (**Export Diagnostics** in the Manager, or `sm86.exe report`)
+- whether you tried a live toggle, and what you saw
+
+Reports never promote a configuration to `PROJECT_VALIDATED` by themselves. See the
+tier model in [COMPATIBILITY.md](COMPATIBILITY.md): `PROJECT_VALIDATED` (project,
+reference board) · `COMMUNITY_CONFIRMED` (independent user reports) ·
+`EXPERIMENTAL` (architecture-compatible, not yet validated) · `UNTESTED`.
+
+If the project was useful, consider **starring it**.
 
 ## License
 

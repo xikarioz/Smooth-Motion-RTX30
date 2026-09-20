@@ -14,17 +14,18 @@ Three separate dimensions (do not merge them):
 | **PROJECT_VALIDATED** | validated by the project on the reference board |
 | **COMMUNITY_CONFIRMED** | multiple independent user reports with plausible evidence |
 | **EXPERIMENTAL** | architecture-compatible, not yet validated |
+| **UNTESTED** | no data yet |
 | **FAILED** | reported not working |
-| **UNKNOWN** | no data yet |
 
 ## Windows
 
 | GPU | Driver | API | Status |
 |---|---|---|---|
-| RTX 3090 | 616.64 | D3D11 / D3D12 | **PROJECT_VALIDATED** |
+| RTX 3090 | 616.64 | D3D11 | **PROJECT_VALIDATED** — instrumentally validated live path |
+| RTX 3090 | 616.64 | D3D12 | **PROJECT_VALIDATED (real-game)** — observed working; active-engine runtime instrumentation currently inconclusive |
 | RTX 3090 | 616.64 | Vulkan | PRACTICALLY_VALIDATED (research path); packaged launch EXPERIMENTAL |
 | Other single-GPU RTX 30 / SM86 (3080, 3070, 3060, 3050, laptop) | 616.64 | D3D11 / D3D12 | EXPERIMENTAL (architecture-compatible; admitted when the exact driver/profile is accepted) |
-| Any RTX 30 | other drivers | — | UNKNOWN (refused until validated) |
+| Any RTX 30 | other drivers | — | UNTESTED (refused until validated) |
 | Multi-GPU systems | 616.64 | — | Device selection not implemented (see below) |
 
 ## Device selection
@@ -42,6 +43,10 @@ incompatible.
 
 ## Report your result
 
-Open a **Hardware Validation Report** issue with your GPU, driver, Windows version,
-game, storefront, API and ON/OFF observation. Do **not** upload NVIDIA DLLs or
-memory dumps. Reports feed the table above after review.
+Submit a
+**[Hardware Validation Report](https://github.com/xikarioz/Smooth-Motion-RTX30/issues/new?template=hardware_validation.yml)**
+with your GPU, driver, Windows version, game, storefront, API and ON/OFF
+observation. Attach the exported diagnostics (**Export Diagnostics** in the Manager,
+or `sm86.exe report`). Do **not** upload NVIDIA DLLs or memory dumps. Reports feed
+the table above after review, and a single report never promotes a configuration to
+`PROJECT_VALIDATED`.
