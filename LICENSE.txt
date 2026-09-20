@@ -1,0 +1,63 @@
+SMOOTH MOTION SM86 — END USER LICENSE AGREEMENT (DRAFT)
+
+Version: 0.4.0
+Copyright (c) 2026 Smooth Motion SM86 project. All rights reserved.
+
+THIS IS A DRAFT FOR LEGAL REVIEW. It is provided so the author can confirm the
+intended terms before public distribution. It is not legal advice.
+
+1. LICENSED MATERIAL
+   This license applies to the compiled software, the accompanying documentation
+   and any updates distributed by the project ("the Software"). Source code is not
+   distributed and no source license is granted.
+
+2. PERMITTED USE
+   You may download, install and use the Software on computers you own or control,
+   for personal, non-commercial purposes, subject to this agreement.
+
+3. RESTRICTIONS
+   You may not:
+   a) redistribute, sublicense, sell, rent, lease, publish or otherwise make the
+      Software available to third parties without prior written permission;
+   b) repackage, rebrand or bundle the Software with other products or installers;
+   c) charge for the Software or for access to it;
+   d) represent yourself as the author of the Software or remove attribution;
+   e) use the Software for commercial purposes without permission.
+   You may make backup copies for your own use.
+
+4. NO AFFILIATION
+   The Software is an independent project. It is not affiliated with, authorized
+   by, sponsored by or endorsed by NVIDIA Corporation. NVIDIA, NVIDIA RTX,
+   Smooth Motion, NvPresent and CUDA are trademarks or technologies of NVIDIA
+   Corporation. No NVIDIA software or binary is included in or distributed with
+   the Software; the Software derives what it needs from the NVIDIA driver you
+   already have installed, under your own license to that driver.
+
+5. THIRD-PARTY AND SYSTEM REQUIREMENTS
+   The Software operates on top of your installed NVIDIA driver and does not
+   modify driver files. You are responsible for complying with the terms that
+   apply to your NVIDIA driver and to any game or service you use with the
+   Software. Do not use the Software with anti-cheat protected or competitive
+   multiplayer titles.
+
+6. REVERSE ENGINEERING
+   To the extent permitted by applicable law, you agree not to reverse engineer,
+   decompile or disassemble the Software except where such restriction is
+   prohibited by law. (Enforceability of this clause varies by jurisdiction.)
+
+7. ACCEPTANCE OF RISK; NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. YOU USE THE SOFTWARE AT
+   YOUR OWN RISK. IT IS AN EXPERIMENTAL RESEARCH-PREVIEW BUILD.
+
+8. LIMITATION OF LIABILITY
+   TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE AUTHOR SHALL NOT BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE SOFTWARE OR ITS USE.
+
+9. TERMINATION
+   This license terminates automatically if you breach it. On termination you must
+   stop using and remove the Software.
+
+10. GOVERNING LAW
+    To be determined by applicable law; this draft does not assert a jurisdiction.
