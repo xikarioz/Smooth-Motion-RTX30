@@ -1,0 +1,79 @@
+name: Hardware Validation Report
+description: Report whether Smooth Motion works on your GPU / driver / game
+labels: ["validation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! This feeds the public compatibility table. Never upload NVIDIA DLLs, memory dumps or personal paths.
+  - type: input
+    id: gpu
+    attributes:
+      label: GPU model
+      placeholder: e.g. RTX 3080
+    validations:
+      required: true
+  - type: dropdown
+    id: form
+    attributes:
+      label: Desktop or laptop
+      options: ["Desktop", "Laptop"]
+    validations:
+      required: true
+  - type: input
+    id: driver
+    attributes:
+      label: NVIDIA driver version
+      placeholder: e.g. 616.64 / 32.0.16.1664
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: e.g. Windows 11 23H2 (22631)
+    validations:
+      required: true
+  - type: input
+    id: game
+    attributes:
+      label: Game tested
+    validations:
+      required: true
+  - type: dropdown
+    id: store
+    attributes:
+      label: Storefront
+      options: ["Steam", "Epic", "Game Pass / Xbox", "Ubisoft", "Other"]
+    validations:
+      required: true
+  - type: dropdown
+    id: api
+    attributes:
+      label: Graphics API
+      options: ["D3D11", "D3D12", "Vulkan", "Not sure"]
+    validations:
+      required: true
+  - type: textarea
+    id: on
+    attributes:
+      label: Smooth ON result
+      description: What did you observe with Smooth Motion ON?
+    validations:
+      required: true
+  - type: textarea
+    id: off
+    attributes:
+      label: Smooth OFF result
+      description: Same scene with Smooth Motion OFF.
+    validations:
+      required: true
+  - type: textarea
+    id: issues
+    attributes:
+      label: Artifacts / issues / notes
+  - type: input
+    id: version
+    attributes:
+      label: App / diagnostics version
+      placeholder: e.g. 0.4.0

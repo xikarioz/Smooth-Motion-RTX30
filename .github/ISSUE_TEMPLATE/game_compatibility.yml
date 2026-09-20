@@ -1,0 +1,42 @@
+name: Game Compatibility Report
+description: Report Smooth Motion behavior for a specific game
+labels: ["game-compat"]
+body:
+  - type: input
+    id: game
+    attributes:
+      label: Game
+    validations:
+      required: true
+  - type: dropdown
+    id: store
+    attributes:
+      label: Storefront
+      options: ["Steam", "Epic", "Game Pass / Xbox", "Ubisoft", "Other"]
+    validations:
+      required: true
+  - type: dropdown
+    id: api
+    attributes:
+      label: API
+      options: ["D3D11", "D3D12", "Vulkan", "Not sure"]
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options: ["Works", "Partially works", "Does not work", "Not sure"]
+    validations:
+      required: true
+  - type: input
+    id: gpu
+    attributes:
+      label: GPU + driver
+      placeholder: e.g. RTX 3090 + 616.64
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (native FG disabled? fullscreen mode? artifacts?)

@@ -1,0 +1,39 @@
+name: Driver Compatibility Request
+description: Request support for your NVIDIA driver version
+labels: ["driver-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tell us which driver you run. New driver support is produced by the project privately and delivered as a compatibility update; do not try to patch drivers yourself.
+  - type: input
+    id: driver
+    attributes:
+      label: NVIDIA driver version
+      placeholder: e.g. 617.00 / 32.0.16.1700
+    validations:
+      required: true
+  - type: input
+    id: gpu
+    attributes:
+      label: GPU model
+      placeholder: e.g. RTX 3080
+    validations:
+      required: true
+  - type: dropdown
+    id: form
+    attributes:
+      label: Desktop or laptop
+      options: ["Desktop", "Laptop"]
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Anything else (why this driver, other tools that require it, etc.)

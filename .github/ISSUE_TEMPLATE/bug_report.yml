@@ -1,0 +1,42 @@
+name: Bug Report
+description: Report a problem with the app, installer or activation
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      placeholder: e.g. 0.4.0
+    validations:
+      required: true
+  - type: input
+    id: gpu
+    attributes:
+      label: GPU + driver
+      placeholder: e.g. RTX 3090 + 616.64
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: Paste the summary from the Manager's Diagnostics export (safe; no NVIDIA binaries).
+      render: text
