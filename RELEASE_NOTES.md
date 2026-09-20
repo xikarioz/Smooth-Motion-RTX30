@@ -1,4 +1,17 @@
-# Release notes — Smooth Motion SM86 0.4.1 (consumer preview)
+# Release notes — Smooth Motion SM86 0.4.2 (consumer preview)
+
+## What's new in 0.4.2
+
+- **System tray controls**: status, current game, one-click **Toggle Smooth Motion**,
+  Open Manager, Diagnostics, Exit. Close the Manager to the tray and keep playing.
+- **Native Windows notifications**: when you toggle live (tray, hotkey or Manager),
+  a normal Windows notification shows `Smooth Motion ON` / `Smooth Motion OFF` with
+  the game name. Failure cases notify too (no active game, live unavailable,
+  state not verified).
+- Tray, Manager, hotkey and CLI remain **one backend** (`runtime.toggle`); every
+  surface reads the same verified state.
+- Live toggle remains D3D11/D3D12 validated; Vulkan sessions show "live toggle not
+  available" (never faked).
 
 ## What's new in 0.4.1
 

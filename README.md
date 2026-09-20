@@ -43,8 +43,11 @@ A gamer-first manager that does the hard part for you:
 
 - **Automatic GPU + driver detection** with a plain-language compatibility status.
 - **One-click master switch** and **per-game switches**.
-- **Live ON/OFF** for a supported running game — flip it mid-game (Manager button
-  or the optional global hotkey) for a same-scene A/B/A comparison, no restart.
+- **Live ON/OFF** for a supported running game — flip it mid-game (Manager button,
+  the optional global hotkey, or the **system tray**) for a same-scene A/B/A
+  comparison, no restart. Results appear as a normal Windows notification.
+- **System tray** controls (status, current game, toggle, open Manager, exit);
+  the Manager can be closed to the tray.
 - **Game library** scanning Steam, Epic and Game Pass — pick a game and Play.
 - **Fail-closed**: if your driver binary isn't recognized, nothing is modified.
 - **Reversible**: rollback and uninstall are built in. The DriverStore is never
