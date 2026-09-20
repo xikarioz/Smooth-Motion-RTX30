@@ -1,4 +1,22 @@
-# Release notes — Smooth Motion SM86 0.4.2 (consumer preview)
+# Release notes — Smooth Motion SM86 0.4.3 (installer UX update)
+
+## What's new in 0.4.3
+
+- **New System Compatibility page in the installer.** Before anything is installed,
+  Setup now shows the detected **GPU**, **NVIDIA driver**, **architecture** and a
+  plain-language compatibility status:
+  - `Compatible` (validated configuration),
+  - `Experimental` (architecture-compatible but not physically validated),
+  - `Driver not yet supported` (your driver version isn't validated yet — nothing is
+    modified),
+  - `Multiple GPUs` (automatic target selection isn't supported in this preview),
+  - `Not supported` (outside RTX 30 / Ampere SM86).
+- A small **Technical details** button shows GPU model, architecture, compute
+  capability and driver version (no internal data).
+- Silent installs (`/VERYSILENT`) are unaffected and never wait on the page.
+
+Product engine unchanged: the bundled application is the same validated 0.4.2 build.
+This release is an installer/UX improvement.
 
 ## What's new in 0.4.2
 

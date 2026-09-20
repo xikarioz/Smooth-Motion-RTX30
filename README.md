@@ -114,9 +114,12 @@ the live **NOW PLAYING** control.
 
 ![Smooth Motion SM86 Manager](assets/manager-top.png)
 
-The **installer** (real v0.4.2 Setup.exe):
+The **installer** detects your GPU, NVIDIA driver and compatibility before anything
+is installed:
 
-![Smooth Motion SM86 installer](assets/setup-welcome.png)
+![Smooth Motion SM86 installer compatibility page](assets/setup-compat.png)
+
+*A real v0.4.3 Setup run on the validated RTX 3090 + driver 616.64.*
 
 A short **Smooth Motion ON → OFF → ON** same-scene clip is being captured (real
 footage, no synthesized comparisons).
