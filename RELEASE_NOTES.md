@@ -1,6 +1,6 @@
 English | [简体中文](RELEASE_NOTES.zh-CN.md) | [Español](RELEASE_NOTES.es-419.md)
 
-# Release notes — Smooth Motion SM86 0.4.4 (localization)
+# Release notes — Smooth Motion SM86 0.4.6 (reliability hardening)
 
 > **Packaging note:** in the v0.4.3 release the portable runtime asset remains
 > `SmoothMotionSM86-0.4.2-win64.zip`; v0.4.3 is an installer/presentation update
@@ -20,6 +20,27 @@ The project keeps these distinct and never merges them:
 - **Vulkan — experimental.** No in-game toggle.
 
 Canonical source: [VALIDATION.md](VALIDATION.md).
+
+## What's new in 0.4.6
+
+- **Reliability hardening.** The Manager starts and fails closed on unsupported or unusual
+  systems (unknown/unsupported drivers, hybrid and multi-GPU setups, malformed settings),
+  showing a clear compatibility status instead of an error.
+- **Single-source compatibility.** Status and backend availability derive from one engine; an
+  unsupported or unknown environment cannot activate the backend.
+- **Support bundle.** "Create Support Package" produces a privacy-reviewed local ZIP (no
+  telemetry) to attach to an issue.
+- **Packaging validation.** Source, onedir, portable and installed builds are tested independently.
+
+## What's new in 0.4.5
+
+- **Manager startup hotfix.** Fixed a GUI startup crash (`unknown option "-command"`) that
+  could stop the Manager from opening at all.
+- **Fail-closed on any system.** The Manager now starts and stays usable even when Smooth
+  Motion cannot be enabled (unsupported GPU or driver, unusual/multi-GPU systems): it shows
+  the detected environment and a clear compatibility status instead of an error.
+- **Startup safety net.** Startup logging and a friendly crash dialog (with an error ID and
+  a local log) replace raw tracebacks.
 
 ## What's new in 0.4.4
 
