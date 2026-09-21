@@ -1,4 +1,6 @@
-# Release notes — Smooth Motion SM86 0.4.3 (installer UX update)
+English | [简体中文](RELEASE_NOTES.zh-CN.md) | [Español](RELEASE_NOTES.es-419.md)
+
+# Release notes — Smooth Motion SM86 0.4.4 (localization)
 
 > **Packaging note:** in the v0.4.3 release the portable runtime asset remains
 > `SmoothMotionSM86-0.4.2-win64.zip`; v0.4.3 is an installer/presentation update
@@ -18,6 +20,18 @@ The project keeps these distinct and never merges them:
 - **Vulkan — experimental.** No in-game toggle.
 
 Canonical source: [VALIDATION.md](VALIDATION.md).
+
+## What's new in 0.4.4
+
+- **Full localization: English, Simplified Chinese (简体中文) and Spanish (Español).**
+- **Manager / launcher** — a language selector in the header; switching applies immediately
+  and the choice is saved. First run follows the Windows UI language.
+- **Installer** — English / 简体中文 / Español, chosen from the Windows UI language or the
+  language dialog; the chosen language is carried into the Manager on first run.
+- **System tray, Windows notifications and the CLI** use the selected language
+  (machine-readable JSON stays language-neutral).
+- **Public documentation** — README, install guide, troubleshooting, support, compatibility,
+  FAQ, roadmap, validation, privacy, security and the EULA are available in all three languages.
 
 ## What's new in 0.4.3
 

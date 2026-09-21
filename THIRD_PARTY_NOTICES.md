@@ -1,3 +1,5 @@
+English | [简体中文](THIRD_PARTY_NOTICES.zh-CN.md) | [Español](THIRD_PARTY_NOTICES.es-419.md)
+
 # Third-party notices
 
 Smooth Motion SM86 includes or depends on the following open-source components.

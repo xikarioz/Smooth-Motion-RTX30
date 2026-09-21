@@ -1,3 +1,5 @@
+English | [简体中文](SECURITY.zh-CN.md) | [Español](SECURITY.es-419.md)
+
 # Security
 
 ## Intended use

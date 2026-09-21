@@ -1,3 +1,5 @@
+English | [简体中文](README.zh-CN.md) | [Español](README.es-419.md)
+
 <p align="center">
   <img src="assets/banner.png" alt="Smooth Motion SM86" width="900">
 </p>

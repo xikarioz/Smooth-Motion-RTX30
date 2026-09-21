@@ -1,3 +1,5 @@
+English | [简体中文](EMULATOR_TEST_PLAN.zh-CN.md) | [Español](EMULATOR_TEST_PLAN.es-419.md)
+
 # Emulator test plan
 
 Status: **NOT_TESTED.** Emulators are treated as a distinct compatibility class.

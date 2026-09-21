@@ -1,42 +1,42 @@
 name: Bug Report
-description: Report a problem with the app, installer or activation
+description: Report a problem with the app, installer or activation / 报告应用、安装程序或激活方面的问题 / Informa de un problema con la aplicación, el instalador o la activación
 labels: ["bug"]
 body:
   - type: input
     id: version
     attributes:
-      label: App version
-      placeholder: e.g. 0.4.0
+      label: App version / 应用版本 / Versión de la app
+      placeholder: e.g. 0.4.0 / 例如 0.4.0 / p. ej. 0.4.0
     validations:
       required: true
   - type: input
     id: gpu
     attributes:
-      label: GPU + driver
-      placeholder: e.g. RTX 3090 + 616.64
+      label: GPU + driver / GPU + 驱动 / GPU + controlador
+      placeholder: e.g. RTX 3090 + 616.64 / 例如 RTX 3090 + 616.64 / p. ej. RTX 3090 + 616.64
     validations:
       required: true
   - type: input
     id: windows
     attributes:
-      label: Windows version
+      label: Windows version / Windows 版本 / Versión de Windows
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
-      label: Steps to reproduce
+      label: Steps to reproduce / 复现步骤 / Pasos para reproducir
     validations:
       required: true
   - type: textarea
     id: expected
     attributes:
-      label: Expected vs actual
+      label: Expected vs actual / 预期与实际 / Esperado frente a real
     validations:
       required: true
   - type: textarea
     id: diagnostics
     attributes:
-      label: Diagnostics
-      description: Paste the summary from the Manager's Diagnostics export (safe; no NVIDIA binaries).
+      label: Diagnostics / 诊断 / Diagnóstico
+      description: Paste the summary from the Manager's Diagnostics export (safe; no NVIDIA binaries). / 粘贴 Manager 诊断导出中的摘要（安全；不含 NVIDIA 二进制文件）。 / Pega el resumen de la exportación de diagnóstico del Manager (seguro; sin binarios de NVIDIA).
       render: text

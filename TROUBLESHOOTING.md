@@ -1,3 +1,5 @@
+English | [简体中文](TROUBLESHOOTING.zh-CN.md) | [Español](TROUBLESHOOTING.es-419.md)
+
 # Troubleshooting
 
 ## Compatibility check says my GPU/driver is not supported
@@ -37,7 +39,7 @@ perfect quality.
 
 The Vulkan path is experimental. Some storefront titles (e.g. Game Pass) relaunch
 into a fresh game process, which defeats the per-process activation; those are not
-supported yet. See [docs/SUPPORT.md](docs/SUPPORT.md).
+supported yet. See [SUPPORT.md](SUPPORT.md).
 
 ## "Unknown driver" / nothing is patched
 

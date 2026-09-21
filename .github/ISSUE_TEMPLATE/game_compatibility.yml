@@ -1,42 +1,42 @@
 name: Game Compatibility Report
-description: Report Smooth Motion behavior for a specific game
+description: Report Smooth Motion behavior for a specific game / 报告特定游戏的 Smooth Motion 表现 / Informa del comportamiento de Smooth Motion en un juego concreto
 labels: ["game-compat"]
 body:
   - type: input
     id: game
     attributes:
-      label: Game
+      label: Game / 游戏 / Juego
     validations:
       required: true
   - type: dropdown
     id: store
     attributes:
-      label: Storefront
-      options: ["Steam", "Epic", "Game Pass / Xbox", "Ubisoft", "Other"]
+      label: Storefront / 商店平台 / Tienda
+      options: ["Steam", "Epic", "Game Pass / Xbox", "Ubisoft", "Other / 其他 / Otro"]
     validations:
       required: true
   - type: dropdown
     id: api
     attributes:
-      label: API
-      options: ["D3D11", "D3D12", "Vulkan", "Not sure"]
+      label: API / 图形 API / API
+      options: ["D3D11", "D3D12", "Vulkan", "Not sure / 不确定 / No estoy seguro"]
     validations:
       required: true
   - type: dropdown
     id: result
     attributes:
-      label: Result
-      options: ["Works", "Partially works", "Does not work", "Not sure"]
+      label: Result / 结果 / Resultado
+      options: ["Works / 有效 / Funciona", "Partially works / 部分有效 / Funciona parcialmente", "Does not work / 无效 / No funciona", "Not sure / 不确定 / No estoy seguro"]
     validations:
       required: true
   - type: input
     id: gpu
     attributes:
-      label: GPU + driver
-      placeholder: e.g. RTX 3090 + 616.64
+      label: GPU + driver / GPU + 驱动 / GPU + controlador
+      placeholder: e.g. RTX 3090 + 616.64 / 例如 RTX 3090 + 616.64 / p. ej. RTX 3090 + 616.64
     validations:
       required: true
   - type: textarea
     id: notes
     attributes:
-      label: Notes (native FG disabled? fullscreen mode? artifacts?)
+      label: Notes (native FG disabled? fullscreen mode? artifacts?) / 备注（是否禁用原生 FG？全屏模式？画面瑕疵？） / Notas (¿FG nativo desactivado? ¿modo de pantalla completa? ¿artefactos?)

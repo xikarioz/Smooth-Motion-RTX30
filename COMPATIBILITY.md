@@ -1,3 +1,5 @@
+English | [简体中文](COMPATIBILITY.zh-CN.md) | [Español](COMPATIBILITY.es-419.md)
+
 # Compatibility
 
 Tiers used by the project. A report never auto-promotes a tier; it is reviewed.

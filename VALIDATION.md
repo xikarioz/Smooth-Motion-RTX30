@@ -1,3 +1,5 @@
+English | [简体中文](VALIDATION.zh-CN.md) | [Español](VALIDATION.es-419.md)
+
 # Validation
 
 This project's compatibility engine is proprietary, so this document publishes the

@@ -1,3 +1,5 @@
+English | [简体中文](FAQ.zh-CN.md) | [Español](FAQ.es-419.md)
+
 # FAQ
 
 **Do I need Python?**

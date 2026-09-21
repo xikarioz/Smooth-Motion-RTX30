@@ -1,3 +1,5 @@
+English | [简体中文](SUPPORT.zh-CN.md) | [Español](SUPPORT.es-419.md)
+
 # Support status
 
 Smooth Motion SM86 supports a deliberately narrow, validated configuration. Other

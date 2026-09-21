@@ -1,3 +1,5 @@
+English | [简体中文](COMMUNITY_VALIDATION.zh-CN.md) | [Español](COMMUNITY_VALIDATION.es-419.md)
+
 # Community validation
 
 Smooth Motion SM86 is validated primarily on a single golden configuration

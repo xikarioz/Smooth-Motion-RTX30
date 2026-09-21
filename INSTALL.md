@@ -1,3 +1,5 @@
+English | [简体中文](INSTALL.zh-CN.md) | [Español](INSTALL.es-419.md)
+
 # Install
 
 ## Requirements

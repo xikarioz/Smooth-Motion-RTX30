@@ -1,5 +1,5 @@
 name: Hardware Validation Report
-description: Structured report - does Smooth Motion work for your GPU / driver / game / launch setup?
+description: Structured report - does Smooth Motion work for your GPU / driver / game / launch setup? / 结构化报告 - Smooth Motion 在你的 GPU / 驱动 / 游戏 / 启动方式上是否有效？ / Informe estructurado - ¿funciona Smooth Motion con tu GPU / controlador / juego / forma de inicio?
 title: "[Validation] "
 labels: ["validation"]
 body:
@@ -17,38 +17,62 @@ body:
 
         Never upload NVIDIA DLLs, memory dumps or personal file paths.
 
+        ---
+
+        感谢！这会汇入公开的兼容性表格。报告本身不会将某个配置提升为 `PROJECT_VALIDATED` -
+        维护者会在审核后分配证据等级（参见
+        [COMPATIBILITY.md](https://github.com/xikarioz/Smooth-Motion-RTX30/blob/main/COMPATIBILITY.md)）。
+
+        **同一款游戏在不同商店/启动方式下结果不同是有用的数据，而不是矛盾。**
+        请针对你实际测试过的每个（游戏 + 商店 + 启动方式）组合分别提交一份报告。
+
+        切勿上传 NVIDIA DLL、内存转储或个人文件路径。
+
+        ---
+
+        ¡Gracias! Esto alimenta la tabla de compatibilidad pública. Los informes por sí
+        solos nunca promueven una configuración a `PROJECT_VALIDATED`: los mantenedores
+        asignan un nivel de evidencia tras la revisión (consulta
+        [COMPATIBILITY.md](https://github.com/xikarioz/Smooth-Motion-RTX30/blob/main/COMPATIBILITY.md)).
+
+        **Que el mismo juego dé un resultado distinto según la tienda o el método de
+        inicio es un dato útil, no una contradicción.** Abre un informe por cada
+        combinación (juego + tienda + método de inicio) que hayas probado realmente.
+
+        Nunca subas DLL de NVIDIA, volcados de memoria ni rutas de archivos personales.
+
   # --- System ---
   - type: input
     id: gpu
     attributes:
-      label: GPU model
-      placeholder: e.g. RTX 3080
+      label: GPU model / GPU 型号 / Modelo de GPU
+      placeholder: e.g. RTX 3080 / 例如 RTX 3080 / p. ej. RTX 3080
     validations:
       required: true
   - type: input
     id: gpu_pci
     attributes:
-      label: GPU PCI ID (if the diagnostics show it)
-      placeholder: e.g. 10DE 2216
+      label: GPU PCI ID (if the diagnostics show it) / GPU PCI ID（如果诊断信息中显示） / ID PCI de la GPU (si el diagnóstico lo muestra)
+      placeholder: e.g. 10DE 2216 / 例如 10DE 2216 / p. ej. 10DE 2216
   - type: dropdown
     id: form
     attributes:
-      label: Desktop or laptop
-      options: ["Desktop", "Laptop"]
+      label: Desktop or laptop / 台式机还是笔记本 / Escritorio o portátil
+      options: ["Desktop / 台式机 / Escritorio", "Laptop / 笔记本电脑 / Portátil"]
     validations:
       required: true
   - type: input
     id: driver
     attributes:
-      label: Driver version
-      placeholder: e.g. 616.64 / 32.0.16.1664
+      label: Driver version / 驱动版本 / Versión del controlador
+      placeholder: e.g. 616.64 / 32.0.16.1664 / 例如 616.64 / 32.0.16.1664 / p. ej. 616.64 / 32.0.16.1664
     validations:
       required: true
   - type: input
     id: windows
     attributes:
-      label: Windows version
-      placeholder: e.g. Windows 11 23H2 (22631)
+      label: Windows version / Windows 版本 / Versión de Windows
+      placeholder: e.g. Windows 11 23H2 (22631) / 例如 Windows 11 23H2 (22631) / p. ej. Windows 11 23H2 (22631)
     validations:
       required: true
 
@@ -56,48 +80,48 @@ body:
   - type: input
     id: game
     attributes:
-      label: Game
+      label: Game / 游戏 / Juego
     validations:
       required: true
   - type: input
     id: game_build
     attributes:
-      label: Game version / build (if practical)
-      placeholder: e.g. 1.31 / Steam build 12345678
+      label: Game version / build (if practical) / 游戏版本 / 内部版本（如果方便） / Versión / compilación del juego (si es posible)
+      placeholder: e.g. 1.31 / Steam build 12345678 / 例如 1.31 / Steam 版本 12345678 / p. ej. 1.31 / compilación de Steam 12345678
   - type: dropdown
     id: storefront
     attributes:
-      label: Storefront
+      label: Storefront / 商店平台 / Tienda
       options:
         - Steam
         - Epic
         - Game Pass / Xbox
         - GOG
-        - Standalone
-        - Emulator
-        - Other
+        - Standalone / 独立运行 / Independiente
+        - Emulator / 模拟器 / Emulador
+        - Other / 其他 / Otro
     validations:
       required: true
   - type: dropdown
     id: launch_method
     attributes:
-      label: Launch method
+      label: Launch method / 启动方式 / Método de inicio
       options:
-        - Steam client
-        - Direct EXE
-        - Epic launcher
-        - Xbox / Game Pass launcher
+        - Steam client / Steam 客户端 / Cliente de Steam
+        - Direct EXE / 直接运行 EXE / EXE directo
+        - Epic launcher / Epic 启动器 / Lanzador de Epic
+        - Xbox / Game Pass launcher / Xbox / Game Pass 启动器 / Lanzador de Xbox / Game Pass
         - GOG Galaxy
-        - Shortcut
-        - Emulator frontend
-        - Other
+        - Shortcut / 快捷方式 / Acceso directo
+        - Emulator frontend / 模拟器前端 / Frontend de emulador
+        - Other / 其他 / Otro
     validations:
       required: true
   - type: dropdown
     id: api
     attributes:
-      label: Graphics API (if known)
-      options: ["D3D9", "D3D10", "D3D11", "D3D12", "Vulkan", "OpenGL", "Unknown"]
+      label: Graphics API (if known) / 图形 API（如果已知） / API gráfica (si se conoce)
+      options: ["D3D9", "D3D10", "D3D11", "D3D12", "Vulkan", "OpenGL", "Unknown / 未知 / Desconocido"]
     validations:
       required: true
 
@@ -105,47 +129,47 @@ body:
   - type: input
     id: base_fps
     attributes:
-      label: Base (pre-interpolation) FPS - approximate is fine
-      description: Interpolation quality depends strongly on base framerate. Record the actual value you saw.
-      placeholder: e.g. ~55 FPS
+      label: Base (pre-interpolation) FPS - approximate is fine / 基础（插帧前）FPS - 大致即可 / FPS base (antes de la interpolación) - una aproximación es suficiente
+      description: Interpolation quality depends strongly on base framerate. Record the actual value you saw. / 插帧质量在很大程度上取决于基础帧率。请记录你实际看到的值。 / La calidad de la interpolación depende mucho de la tasa de fotogramas base. Anota el valor real que observaste.
+      placeholder: e.g. ~55 FPS / 例如 ~55 FPS / p. ej. ~55 FPS
     validations:
       required: true
   - type: input
     id: refresh
     attributes:
-      label: Display refresh rate
-      placeholder: e.g. 144 Hz
+      label: Display refresh rate / 显示器刷新率 / Frecuencia de actualización de la pantalla
+      placeholder: e.g. 144 Hz / 例如 144 Hz / p. ej. 144 Hz
   - type: input
     id: resolution
     attributes:
-      label: Resolution
-      placeholder: e.g. 2560x1440
+      label: Resolution / 分辨率 / Resolución
+      placeholder: e.g. 2560x1440 / 例如 2560x1440 / p. ej. 2560x1440
   - type: dropdown
     id: requested
     attributes:
-      label: Smooth Motion requested
-      options: ["ON", "OFF"]
+      label: Smooth Motion requested / 请求的 Smooth Motion / Smooth Motion solicitado
+      options: ["ON / 开启 / ACTIVADO", "OFF / 关闭 / DESACTIVADO"]
     validations:
       required: true
   - type: dropdown
     id: applied
     attributes:
-      label: Smooth Motion applied (from State / Manager)
-      options: ["YES", "NO", "UNKNOWN"]
+      label: Smooth Motion applied (from State / Manager) / 已应用的 Smooth Motion（来自 State / Manager） / Smooth Motion aplicado (según State / Manager)
+      options: ["YES / 是 / SÍ", "NO / 否 / NO", "UNKNOWN / 未知 / DESCONOCIDO"]
     validations:
       required: true
   - type: dropdown
     id: interpolation
     attributes:
-      label: Visual interpolation observed
-      options: ["YES", "NO", "UNCERTAIN"]
+      label: Visual interpolation observed / 观察到的视觉插帧 / Interpolación visual observada
+      options: ["YES / 是 / SÍ", "NO / 否 / NO", "UNCERTAIN / 不确定 / INCIERTO"]
     validations:
       required: true
   - type: dropdown
     id: live_toggle
     attributes:
-      label: Live toggle tested
-      options: ["YES - worked", "YES - did not work", "NO", "Not available for this session"]
+      label: Live toggle tested / 实时切换已测试 / Cambio en vivo probado
+      options: ["YES - worked / 是 - 有效 / SÍ - funcionó", "YES - did not work / 是 - 无效 / SÍ - no funcionó", "NO / 否 / NO", "Not available for this session / 本次会话不可用 / No disponible en esta sesión"]
     validations:
       required: true
 
@@ -153,27 +177,27 @@ body:
   - type: dropdown
     id: crash
     attributes:
-      label: Crash
-      options: ["NO", "YES"]
+      label: Crash / 崩溃 / Cierre inesperado
+      options: ["NO / 否 / NO", "YES / 是 / SÍ"]
     validations:
       required: true
   - type: dropdown
     id: artifacts
     attributes:
-      label: Artifacts
-      options: ["NONE", "MINOR", "MODERATE", "SEVERE"]
+      label: Artifacts / 画面瑕疵 / Artefactos
+      options: ["NONE / 无 / NINGUNO", "MINOR / 轻微 / LEVES", "MODERATE / 中等 / MODERADOS", "SEVERE / 严重 / GRAVES"]
     validations:
       required: true
   - type: textarea
     id: artifact_desc
     attributes:
-      label: Artifact description
-      description: What you saw, in which scene, at which settings and base FPS.
+      label: Artifact description / 瑕疵描述 / Descripción de los artefactos
+      description: What you saw, in which scene, at which settings and base FPS. / 你看到了什么、在哪个场景、使用何种设置以及基础 FPS。 / Qué viste, en qué escena, con qué ajustes y con qué FPS base.
   - type: textarea
     id: on_off
     attributes:
-      label: ON vs OFF observation
-      description: What changed between Smooth Motion ON and OFF on the same scene?
+      label: ON vs OFF observation / ON 与 OFF 对比观察 / Observación ON frente a OFF
+      description: What changed between Smooth Motion ON and OFF on the same scene? / 在同一场景下，Smooth Motion 开启与关闭之间有何变化？ / ¿Qué cambió entre Smooth Motion ON y OFF en la misma escena?
     validations:
       required: true
 
@@ -181,35 +205,42 @@ body:
   - type: textarea
     id: diagnostics
     attributes:
-      label: Compatibility / diagnostics report
+      label: Compatibility / diagnostics report / 兼容性 / 诊断报告 / Informe de compatibilidad y diagnóstico
       description: |
         Paste the summary from **Export Diagnostics** in the Manager, or attach the
         `.zip` from `sm86.exe report`. Do not attach NVIDIA DLLs, memory dumps or
         personal paths.
+
+        粘贴 Manager 中 **Export Diagnostics** 生成的摘要，或附上 `sm86.exe report` 导出的
+        `.zip` 文件。请勿附上 NVIDIA DLL、内存转储或个人路径。
+
+        Pega el resumen de **Export Diagnostics** del Manager o adjunta el
+        `.zip` de `sm86.exe report`. No adjuntes DLL de NVIDIA, volcados de memoria ni
+        rutas personales.
   - type: input
     id: media
     attributes:
-      label: Logs / screenshots / video (optional)
-      placeholder: Links to unmodified footage or screenshots.
+      label: Logs / screenshots / video (optional) / 日志 / 截图 / 视频（可选） / Registros / capturas / vídeo (opcional)
+      placeholder: Links to unmodified footage or screenshots. / 未经修改的录像或截图的链接。 / Enlaces a grabaciones o capturas sin modificar.
   - type: input
     id: version
     attributes:
-      label: App / diagnostics version
-      placeholder: e.g. 0.4.3
+      label: App / diagnostics version / 应用 / 诊断版本 / Versión de la app / del diagnóstico
+      placeholder: e.g. 0.4.3 / 例如 0.4.3 / p. ej. 0.4.3
   - type: textarea
     id: notes
     attributes:
-      label: Additional notes
+      label: Additional notes / 补充说明 / Notas adicionales
 
   # --- Required confirmations ---
   - type: checkboxes
     id: confirmations
     attributes:
-      label: Confirmations
+      label: Confirmations / 确认事项 / Confirmaciones
       options:
-        - label: This report does **not** involve anti-cheat bypass, anti-cheat testing, or competitive multiplayer.
+        - label: This report does **not** involve anti-cheat bypass, anti-cheat testing, or competitive multiplayer. / 本报告**不**涉及反作弊绕过、反作弊测试或竞技性多人游戏。 / Este informe **no** implica elusión de anti-cheat, pruebas de anti-cheat ni multijugador competitivo.
           required: true
-        - label: This report contains no NVIDIA DLLs, memory dumps, credentials or personal file paths.
+        - label: This report contains no NVIDIA DLLs, memory dumps, credentials or personal file paths. / 本报告不包含 NVIDIA DLL、内存转储、凭据或个人文件路径。 / Este informe no contiene DLL de NVIDIA, volcados de memoria, credenciales ni rutas de archivos personales.
           required: true
-        - label: I have not been asked to provide copyrighted firmware, keys or game files.
+        - label: I have not been asked to provide copyrighted firmware, keys or game files. / 我没有被要求提供受版权保护的固件、密钥或游戏文件。 / No se me ha pedido proporcionar firmware, claves o archivos de juego con derechos de autor.
           required: true

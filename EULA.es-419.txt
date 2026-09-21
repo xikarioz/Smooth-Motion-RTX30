@@ -1,0 +1,67 @@
+[English](EULA.txt) | [简体中文](EULA.zh-CN.txt) | Español
+
+SMOOTH MOTION SM86
+ACUERDO DE LICENCIA DE USUARIO FINAL
+
+Copyright (c) 2026 Smooth Motion SM86 project. Todos los derechos reservados.
+
+1. MATERIAL LICENCIADO
+   Esta licencia se aplica al software compilado, la documentación que lo acompaña
+   y cualquier actualización distribuida por el proyecto ("el Software"). El código
+   fuente no se distribuye y no se otorga ninguna licencia de código fuente.
+
+2. USO PERMITIDO
+   Puedes descargar, instalar y usar el Software en computadoras que poseas o
+   controles, con fines personales y no comerciales, sujeto a este acuerdo.
+
+3. RESTRICCIONES
+   No puedes:
+   a) redistribuir, sublicenciar, vender, alquilar, arrendar, publicar o de cualquier
+      otra forma poner el Software a disposición de terceros sin permiso previo por
+      escrito;
+   b) reempaquetar, cambiar de marca o incluir el Software con otros productos o
+      instaladores;
+   c) cobrar por el Software o por el acceso a él;
+   d) presentarte como autor del Software ni eliminar la atribución;
+   e) usar el Software con fines comerciales sin permiso.
+   Puedes hacer copias de respaldo para tu propio uso.
+
+4. SIN AFILIACIÓN
+   El Software es un proyecto independiente. No está afiliado, autorizado,
+   patrocinado ni respaldado por NVIDIA Corporation. NVIDIA, NVIDIA RTX,
+   Smooth Motion, NvPresent y CUDA son marcas comerciales o tecnologías de NVIDIA
+   Corporation. No se incluye ni se distribuye ningún software o binario de NVIDIA
+   con el Software; el Software obtiene lo que necesita del controlador NVIDIA que
+   ya tienes instalado, bajo tu propia licencia de ese controlador.
+
+5. TERCEROS Y REQUISITOS DEL SISTEMA
+   El Software funciona sobre tu controlador NVIDIA instalado y no modifica los
+   archivos del controlador. Eres responsable de cumplir con los términos que se
+   aplican a tu controlador NVIDIA y a cualquier juego o servicio que uses con el
+   Software. No uses el Software con títulos multijugador competitivos o protegidos
+   por antitrampas.
+
+6. INGENIERÍA INVERSA
+   En la medida permitida por la ley aplicable, aceptas no realizar ingeniería
+   inversa, descompilar ni desensamblar el Software, salvo cuando dicha restricción
+   esté prohibida por la ley.
+
+7. ACEPTACIÓN DEL RIESGO; SIN GARANTÍA
+   EL SOFTWARE SE PROPORCIONA "AS IS", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O
+   IMPLÍCITA, INCLUIDAS, ENTRE OTRAS, LAS GARANTÍAS DE COMERCIABILIDAD, IDONEIDAD
+   PARA UN FIN DETERMINADO Y NO INFRACCIÓN. USAS EL SOFTWARE BAJO TU PROPIO RIESGO.
+   ES UNA COMPILACIÓN DE VISTA PREVIA EXPERIMENTAL PARA CONSUMIDORES.
+
+8. LIMITACIÓN DE RESPONSABILIDAD
+   EN LA MEDIDA MÁXIMA PERMITIDA POR LA LEY, EL AUTOR NO SERÁ RESPONSABLE DE NINGUNA
+   RECLAMACIÓN, DAÑO U OTRA RESPONSABILIDAD QUE SURJA DEL SOFTWARE O DE SU USO.
+
+9. TERMINACIÓN
+   Esta licencia termina automáticamente si la incumples. Al terminar, debes dejar
+   de usar y eliminar el Software.
+
+10. DIVISIBILIDAD
+    Si alguna disposición de este acuerdo se considera inaplicable, las disposiciones
+    restantes permanecen vigentes.
+
+> Esta traducción se ofrece por conveniencia. Si el texto difiere, la versión en inglés es el documento canónico del proyecto y es la jurídicamente vinculante.

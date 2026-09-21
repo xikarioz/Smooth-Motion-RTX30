@@ -1,3 +1,5 @@
+English | [简体中文](PRIVACY.zh-CN.md) | [Español](PRIVACY.es-419.md)
+
 # Privacy
 
 Smooth Motion SM86 is designed to work fully offline.

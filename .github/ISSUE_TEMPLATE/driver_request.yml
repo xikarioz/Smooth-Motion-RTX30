@@ -1,39 +1,43 @@
 name: Driver Compatibility Request
-description: Request support for your NVIDIA driver version
+description: Request support for your NVIDIA driver version / 请求支持你的 NVIDIA 驱动版本 / Solicita compatibilidad para tu versión del controlador NVIDIA
 labels: ["driver-request"]
 body:
   - type: markdown
     attributes:
       value: |
         Tell us which driver you run. New driver support is produced by the project privately and delivered as a compatibility update; do not try to patch drivers yourself.
+
+        告诉我们你使用的驱动。新的驱动支持由项目私下制作，并作为兼容性更新发布；请勿自行尝试修补驱动。
+
+        Indícanos qué controlador usas. El soporte para nuevos controladores lo produce el proyecto de forma privada y se entrega como una actualización de compatibilidad; no intentes parchear los controladores por tu cuenta.
   - type: input
     id: driver
     attributes:
-      label: NVIDIA driver version
-      placeholder: e.g. 617.00 / 32.0.16.1700
+      label: NVIDIA driver version / NVIDIA 驱动版本 / Versión del controlador NVIDIA
+      placeholder: e.g. 617.00 / 32.0.16.1700 / 例如 617.00 / 32.0.16.1700 / p. ej. 617.00 / 32.0.16.1700
     validations:
       required: true
   - type: input
     id: gpu
     attributes:
-      label: GPU model
-      placeholder: e.g. RTX 3080
+      label: GPU model / GPU 型号 / Modelo de GPU
+      placeholder: e.g. RTX 3080 / 例如 RTX 3080 / p. ej. RTX 3080
     validations:
       required: true
   - type: dropdown
     id: form
     attributes:
-      label: Desktop or laptop
-      options: ["Desktop", "Laptop"]
+      label: Desktop or laptop / 台式机还是笔记本 / Escritorio o portátil
+      options: ["Desktop / 台式机 / Escritorio", "Laptop / 笔记本电脑 / Portátil"]
     validations:
       required: true
   - type: input
     id: windows
     attributes:
-      label: Windows version
+      label: Windows version / Windows 版本 / Versión de Windows
     validations:
       required: true
   - type: textarea
     id: why
     attributes:
-      label: Anything else (why this driver, other tools that require it, etc.)
+      label: Anything else (why this driver, other tools that require it, etc.) / 其他说明（为什么需要此驱动、依赖它的其他工具等） / Cualquier otra cosa (por qué este controlador, otras herramientas que lo requieran, etc.)
