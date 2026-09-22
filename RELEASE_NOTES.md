@@ -1,6 +1,32 @@
 English | [简体中文](RELEASE_NOTES.zh-CN.md) | [Español](RELEASE_NOTES.es-419.md)
 
-# Release notes — Smooth Motion SM86 0.4.4 (localization)
+# Release notes — Smooth Motion SM86 0.5.0-rc.1 (experimental compatibility preview)
+
+> **Prerelease.** This is a test build. Driver 591.86 support is **statically validated**,
+> not live-validated by the project; please test it in a game and report back.
+
+## What's new in 0.5.0-rc.1
+
+- **Manager startup crash fixed.** The `ttk.Combobox` startup crash reported in issue #3
+  is fixed; the Manager opens on affected systems and stays fail-closed.
+- **Chinese installer fix (issue #5).** The detected GPU, NVIDIA driver, architecture and
+  compatibility values no longer render blank in the Simplified Chinese installer and the
+  Technical details dialog. Root cause: the compatibility file was written as UTF-16, which
+  the Inno Setup reader does not support; it is now UTF-8.
+- **Installation is no longer tied to one exact driver version.** Setup installs and the
+  Manager opens on unknown/unvalidated drivers; only backend activation is refused
+  (fail-closed). Your installed NVIDIA driver files are never modified.
+- **Experimental compatibility for the exact 591.86 NvPresent build.** The Manager now
+  identifies the *actual NvPresent binary* by SHA-256 rather than trusting the driver version
+  string. If your installed build matches the statically validated one, it reports
+  **"Static validation passed"** and offers experimental activation (with a one-time
+  acknowledgement). This is not a claim that 591.86 works — it must be confirmed in a live
+  game by the community.
+- **Support bundle** now includes the NvPresent SHA-256, manifest match, compatibility tier,
+  object census and transform/runtime state (hashes and counts only; never NVIDIA binaries).
+- **616.64 / RTX 3090 remains the live-validated golden configuration** and is unchanged.
+- **Broader multi-driver generalization** (structural analysis of more driver families) is
+  in progress for v0.5.1.
 
 > **Packaging note:** in the v0.4.3 release the portable runtime asset remains
 > `SmoothMotionSM86-0.4.2-win64.zip`; v0.4.3 is an installer/presentation update
@@ -20,6 +46,27 @@ The project keeps these distinct and never merges them:
 - **Vulkan — experimental.** No in-game toggle.
 
 Canonical source: [VALIDATION.md](VALIDATION.md).
+
+## What's new in 0.4.6
+
+- **Reliability hardening.** The Manager starts and fails closed on unsupported or unusual
+  systems (unknown/unsupported drivers, hybrid and multi-GPU setups, malformed settings),
+  showing a clear compatibility status instead of an error.
+- **Single-source compatibility.** Status and backend availability derive from one engine; an
+  unsupported or unknown environment cannot activate the backend.
+- **Support bundle.** "Create Support Package" produces a privacy-reviewed local ZIP (no
+  telemetry) to attach to an issue.
+- **Packaging validation.** Source, onedir, portable and installed builds are tested independently.
+
+## What's new in 0.4.5
+
+- **Manager startup hotfix.** Fixed a GUI startup crash (`unknown option "-command"`) that
+  could stop the Manager from opening at all.
+- **Fail-closed on any system.** The Manager now starts and stays usable even when Smooth
+  Motion cannot be enabled (unsupported GPU or driver, unusual/multi-GPU systems): it shows
+  the detected environment and a clear compatibility status instead of an error.
+- **Startup safety net.** Startup logging and a friendly crash dialog (with an error ID and
+  a local log) replace raw tracebacks.
 
 ## What's new in 0.4.4
 

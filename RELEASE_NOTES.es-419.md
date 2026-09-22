@@ -1,6 +1,18 @@
 [English](RELEASE_NOTES.md) | [简体中文](RELEASE_NOTES.zh-CN.md) | Español
 
-# Notas de la versión — Smooth Motion SM86 0.4.4 (localización)
+# Notas de la versión — Smooth Motion SM86 0.5.0-rc.1 (vista previa de compatibilidad experimental)
+
+> **Prelanzamiento.** Esta es una compilación de prueba. La compatibilidad con el controlador 591.86 está **validada estáticamente**, no validada en vivo por el proyecto; pruébala en un juego y cuéntanoslo.
+
+## Novedades de 0.5.0-rc.1
+
+- **Corregido el fallo de inicio del Administrador.** El fallo de inicio de `ttk.Combobox` del issue #3 está corregido; el Administrador se abre en los sistemas afectados y permanece cerrado por seguridad.
+- **Corregido el instalador en chino (issue #5).** La GPU, el controlador NVIDIA, la arquitectura y la compatibilidad detectados ya no aparecen en blanco en el instalador en chino simplificado ni en el diálogo de detalles técnicos. Causa raíz: el archivo de compatibilidad se escribía en UTF-16, que el lector de Inno Setup no admite; ahora es UTF-8.
+- **La instalación ya no depende de una versión exacta del controlador.** El instalador instala y el Administrador se abre con controladores desconocidos/no validados; solo se rechaza la activación del backend (cerrado por seguridad). Tus archivos de controlador NVIDIA instalados nunca se modifican.
+- **Compatibilidad experimental para la compilación exacta de NvPresent 591.86.** El Administrador ahora identifica el **binario NvPresent real** por SHA-256 en lugar de confiar solo en la versión del controlador. Si tu compilación coincide con la validada estáticamente, muestra **«Validación estática superada»** y ofrece activación experimental (con una confirmación única). Esto no afirma que 591.86 funcione; debe confirmarlo la comunidad en un juego real.
+- **El paquete de soporte** ahora incluye el SHA-256 de NvPresent, la coincidencia de manifiesto, el nivel de compatibilidad, el censo de objetos y el estado de transformación/ejecución (solo hashes y recuentos; nunca binarios de NVIDIA).
+- **616.64 / RTX 3090 sigue siendo la configuración dorada validada en vivo**, sin cambios.
+- **La generalización multi-controlador** (análisis estructural de más familias) avanza en v0.5.1.
 
 > **Nota de empaquetado:** en la versión v0.4.3, el recurso portátil del runtime sigue
 > siendo `SmoothMotionSM86-0.4.2-win64.zip`; v0.4.3 es una actualización del
@@ -21,6 +33,29 @@ El proyecto los mantiene distintos y nunca los fusiona:
 - **Vulkan — experimental.** Sin interruptor dentro del juego.
 
 Fuente canónica: [VALIDATION.md](VALIDATION.md).
+
+## Novedades de la 0.4.6
+
+- **Refuerzo de fiabilidad.** El Administrador arranca y falla de forma segura en sistemas no
+  compatibles o inusuales (controladores desconocidos/no compatibles, configuraciones híbridas y
+  multi-GPU, ajustes corruptos), mostrando un estado de compatibilidad claro en lugar de un error.
+- **Compatibilidad de fuente única.** El estado y la disponibilidad del backend provienen de un
+  único motor; un entorno no compatible o desconocido no puede activar el backend.
+- **Paquete de soporte.** "Crear paquete de soporte" genera un ZIP local revisado en cuanto a
+  privacidad (sin telemetría) para adjuntar a un issue.
+- **Validación de empaquetado.** Las compilaciones de código fuente, onedir, portátil e instalada
+  se prueban de forma independiente.
+
+## Novedades de la 0.4.5
+
+- **Corrección de inicio del Administrador.** Se corrigió un fallo de inicio de la GUI
+  (`unknown option "-command"`) que podía impedir que el Administrador se abriera.
+- **Fallo seguro en cualquier sistema.** El Administrador ahora arranca y sigue siendo útil
+  aunque Smooth Motion no pueda activarse (GPU o controlador no compatibles, sistemas
+  inusuales o multi-GPU): muestra el entorno detectado y un estado de compatibilidad claro
+  en lugar de un error.
+- **Red de seguridad de inicio.** Registro de inicio y un diálogo de error amigable (con un
+  ID de error y un registro local) en lugar de trazas sin procesar.
 
 ## Novedades de la 0.4.4
 
