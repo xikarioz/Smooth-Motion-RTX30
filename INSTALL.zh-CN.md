@@ -19,7 +19,7 @@ Smooth Motion 激活保持**故障关闭**，直到你安装的 NvPresent 二进
 
 ## 步骤
 
-1. 从 [v0.5.0-rc.1 预发布版本](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1)
+1. 从[最新发行版](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest)
    下载 **`SmoothMotionSM86-Setup.exe`**。
 2. 将其 SHA-256 与发行页面上的 `SHA256SUMS.txt` 进行核对。
 3. 运行安装程序。它首先执行只读的 **System Compatibility**（系统兼容性）检查，

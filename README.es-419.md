@@ -14,15 +14,13 @@ Smooth Motion SM86 habilita la ruta de interpolación de fotogramas **NvPresent 
 > Usa la ruta Smooth Motion a nivel de presentación de NVIDIA en lugar de requerir la
 > integración Streamline / DLSS-G de un juego.
 
-**⬇ [Descargar v0.5.0-rc.1 para Windows — Vista previa de compatibilidad experimental (prelanzamiento)](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1)**
+**⬇ [Descargar Smooth Motion SM86 v0.5.0 para Windows](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest)**
 
-> **Versión de prueba actual: v0.5.0-rc.1 (prelanzamiento).** Incluye la corrección del fallo de inicio del Administrador, la corrección de los campos dinámicos del instalador en chino simplificado y una ruta **validada estáticamente** experimental para la compilación exacta reconocida de NvPresent **591.86**. **616.64 sigue siendo la configuración dorada validada en vivo.** 591.86 *no* está validada en vivo todavía: pruébala y cuéntanoslo.
->
-> La insignia/etiqueta "latest" de GitHub sigue apuntando a la última versión **estable**; el prelanzamiento anterior es la compilación de prueba actual.
+> **Versión actual: v0.5.0.** Incluye la corrección del fallo de inicio del Administrador, la corrección de los campos dinámicos del instalador en chino simplificado, un comportamiento de cierre/bandeja más claro y una ruta **validada estáticamente** experimental para la compilación exacta reconocida de NvPresent **591.86**. **616.64 sigue siendo la configuración dorada validada en vivo.** 591.86 *no* está validada en vivo todavía: pruébala y cuéntanoslo.
 
 RTX 30 / SM86 · D3D11 · D3D12 · Vulkan experimental · Windows 10/11 x64
 
-![Prelanzamiento actual](https://img.shields.io/badge/prerelease-v0.5.0--rc.1-orange)
+![Última versión](https://img.shields.io/github/v/release/xikarioz/Smooth-Motion-RTX30?label=release&color=3fae6a)
 ![Plataforma](https://img.shields.io/badge/platform-Windows-0078D6)
 ![GPU](https://img.shields.io/badge/GPU-RTX%2030%20%2F%20SM86-76B900)
 ![Estado](https://img.shields.io/badge/status-Consumer%20Preview-orange)
@@ -69,7 +67,7 @@ La demostración usará metraje de juego sin modificar, sin interpolación sint�
 
 ## Inicio rápido
 
-1. Descarga **`SmoothMotionSM86-Setup.exe`** desde el [prelanzamiento v0.5.0-rc.1](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1).
+1. Descarga **`SmoothMotionSM86-Setup.exe`** desde la [última versión](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest).
 2. Ejecútalo (sin derechos de administrador, sin Python, sin terminal).
 3. Abre **Smooth Motion SM86**.
 4. Activa **SMOOTH MOTION**.

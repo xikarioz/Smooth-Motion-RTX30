@@ -20,7 +20,7 @@ supported by the engine. See [SUPPORT.md](SUPPORT.md) and [COMPATIBILITY.md](COM
 ## Steps
 
 1. Download **`SmoothMotionSM86-Setup.exe`** from the
-   [v0.5.0-rc.1 prerelease](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1).
+   [latest release](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest).
 2. Verify its SHA-256 against `SHA256SUMS.txt` on the release page.
 3. Run the installer. It performs a read-only **System Compatibility** check first
    and shows your GPU, NVIDIA driver, architecture and a plain-language status:

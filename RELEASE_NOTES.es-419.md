@@ -1,10 +1,21 @@
 [English](RELEASE_NOTES.md) | [简体中文](RELEASE_NOTES.zh-CN.md) | Español
 
-# Notas de la versión — Smooth Motion SM86 0.5.0-rc.1 (vista previa de compatibilidad experimental)
+# Notas de la versión — Smooth Motion SM86 0.5.0
 
-> **Prelanzamiento.** Esta es una compilación de prueba. La compatibilidad con el controlador 591.86 está **validada estáticamente**, no validada en vivo por el proyecto; pruébala en un juego y cuéntanoslo.
+> Versión estable. La compatibilidad con el controlador **591.86** para la compilación exacta reconocida de NvPresent está **validada estáticamente / experimental** y **aún no validada en vivo** por el proyecto; **616.64** sigue siendo la configuración dorada validada en vivo.
 
-## Novedades de 0.5.0-rc.1
+## Novedades de 0.5.0
+
+- **Corregido el fallo de inicio del Administrador (issue #3).** El fallo de inicio de `ttk.Combobox` está corregido; el Administrador se abre en los sistemas afectados y permanece cerrado por seguridad.
+- **Corregidos los campos dinámicos del instalador en chino (issue #5).** Los datos de compatibilidad ahora se escriben en UTF-8, por lo que la GPU, el controlador NVIDIA, la arquitectura y el estado detectados ya no aparecen en blanco en el instalador en chino simplificado ni en el diálogo de detalles técnicos.
+- **Comportamiento de cierre / bandeja aclarado.** La **X** de la barra de título minimiza a la bandeja del sistema y mantiene la aplicación en ejecución a propósito (la monitorización continúa); usa **Salir** en el menú de la bandeja para cerrarla por completo. Ahora lo indica un aviso único y los documentos lo explican.
+- **La instalación ya no depende de una versión exacta del controlador.** El instalador y el Administrador funcionan con controladores desconocidos/no validados; solo se rechaza la activación del backend (cerrado por seguridad). Tus archivos de controlador NVIDIA instalados nunca se modifican.
+- **Compatibilidad experimental para la compilación exacta reconocida de NvPresent 591.86.** El Administrador identifica el **binario NvPresent real** por SHA-256 en lugar de confiar solo en la versión del controlador. Si tu compilación coincide con la validada estáticamente, muestra **«Validación estática superada»** y ofrece activación experimental (con una confirmación única). Esto no afirma que 591.86 funcione; aún se necesita confirmación en vivo.
+- **616.64 / RTX 3090 sigue siendo la configuración dorada validada en vivo** y no cambia.
+- **El paquete de soporte** incluye el SHA-256 de NvPresent, la coincidencia de manifiesto, el nivel de compatibilidad y el censo de objetos (solo hashes y recuentos; nunca binarios de NVIDIA).
+- **La generalización multi-controlador estructural** continúa en v0.5.1.
+
+## Novedades de 0.5.0-rc.1 (prelanzamiento, histórico)
 
 - **Corregido el fallo de inicio del Administrador.** El fallo de inicio de `ttk.Combobox` del issue #3 está corregido; el Administrador se abre en los sistemas afectados y permanece cerrado por seguridad.
 - **Corregido el instalador en chino (issue #5).** La GPU, el controlador NVIDIA, la arquitectura y la compatibilidad detectados ya no aparecen en blanco en el instalador en chino simplificado ni en el diálogo de detalles técnicos. Causa raíz: el archivo de compatibilidad se escribía en UTF-16, que el lector de Inno Setup no admite; ahora es UTF-8.
@@ -155,16 +166,11 @@ no se redistribuye ningún binario de NVIDIA y el DriverStore nunca se modifica.
   instrumentalmente** (ON/OFF/ON en vivo en la configuración dorada).
 - D3D12: títulos seleccionados — **observado funcionando**; la instrumentación del
   runtime del motor dinámico actualmente es **no concluyente** (no es una regresión).
-- Validada estáticamente (experimental): la compilación exacta reconocida de NvPresent
-  **591.86** — aún no validada en vivo.
 - Compatible con la arquitectura (experimental): otras placas con una sola GPU RTX 30 /
-  SM86 una vez reconocido el controlador/perfil exacto — misma arquitectura, no validadas físicamente.
+  SM86 con el mismo controlador — misma arquitectura, no validadas físicamente.
 - Experimental: Vulkan en Windows.
-- NvPresent desconocido/no validado: el instalador y el Administrador siguen funcionando;
-  la activación de Smooth Motion se rechaza (cerrada por seguridad, no se modifica nada).
-- No compatible: títulos de 32 bits, títulos con antitrampas, GPU que no sean SM86.
-- Nota histórica: las versiones v0.4.x anteriores estaban limitadas al perfil validado
-  616.64; esa restricción se eliminó en v0.5.0-rc.1.
+- No compatible: otras versiones de controlador, títulos de 32 bits, títulos con
+  antitrampas.
 - Multi-GPU: la vista previa para consumidores actual espera un único dispositivo
   objetivo CUDA/NVIDIA. La selección explícita de la GPU de renderizado está prevista
   para una versión posterior (una limitación de selección de dispositivo del

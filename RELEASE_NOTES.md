@@ -1,11 +1,36 @@
 English | [简体中文](RELEASE_NOTES.zh-CN.md) | [Español](RELEASE_NOTES.es-419.md)
 
-# Release notes — Smooth Motion SM86 0.5.0-rc.1 (experimental compatibility preview)
+# Release notes — Smooth Motion SM86 0.5.0
 
-> **Prerelease.** This is a test build. Driver 591.86 support is **statically validated**,
-> not live-validated by the project; please test it in a game and report back.
+> Stable release. Driver **591.86** support for the exact recognized NvPresent build is
+> **statically validated / experimental** and **not yet live-validated** by the project;
+> **616.64** remains the live-validated golden configuration.
 
-## What's new in 0.5.0-rc.1
+## What's new in 0.5.0
+
+- **Manager startup crash fixed (issue #3).** The `ttk.Combobox` startup crash is fixed;
+  the Manager opens on affected systems and stays fail-closed.
+- **Chinese installer dynamic values fixed (issue #5).** The compatibility data is now
+  UTF-8, so the detected GPU, NVIDIA driver, architecture and status are no longer blank
+  in the Simplified Chinese installer or the Technical details dialog.
+- **Close / tray behaviour clarified.** The title-bar **X** minimizes to the system tray
+  and keeps the app running by design (background monitoring continues); use the tray menu
+  **Exit** to quit completely. A one-time notice now says so and the docs explain it.
+- **Installation is no longer tied to one exact driver version.** Setup and the Manager
+  run on unknown/unvalidated drivers; only backend activation is refused (fail-closed).
+  Your installed NVIDIA driver files are never modified.
+- **Experimental compatibility for the exact recognized 591.86 NvPresent build.** The
+  Manager identifies the *actual NvPresent binary* by SHA-256 rather than trusting the
+  driver version string. If your installed build matches the statically validated one, it
+  reports **"Static validation passed"** and offers experimental activation (with a
+  one-time acknowledgement). This is not a claim that 591.86 works — live confirmation is
+  still needed.
+- **616.64 / RTX 3090 remains the live-validated golden configuration** and is unchanged.
+- **Support bundle** includes the NvPresent SHA-256, manifest match, compatibility tier and
+  object census (hashes and counts only; never NVIDIA binaries).
+- **Broader structural multi-driver generalization** continues for v0.5.1.
+
+## What's new in 0.5.0-rc.1 (prerelease, historical)
 
 - **Manager startup crash fixed.** The `ttk.Combobox` startup crash reported in issue #3
   is fixed; the Manager opens on affected systems and stays fail-closed.
@@ -156,16 +181,10 @@ is redistributed and the DriverStore is never modified.
   ON/OFF/ON on the golden configuration).
 - D3D12: selected titles — **observed working**; dynamic-engine runtime
   instrumentation currently **inconclusive** (not a regression).
-- Statically validated (experimental): the exact recognized NvPresent build from
-  driver 591.86 — not yet live-validated.
-- Architecture compatible (experimental): other single-GPU RTX 30 / SM86 boards once
-  the exact driver/profile is recognized — same architecture, not physically validated.
+- Architecture compatible (experimental): other single-GPU RTX 30 / SM86 boards
+  with the same driver — same architecture, not physically validated.
 - Experimental: Windows Vulkan.
-- Unknown/unvalidated NvPresent: Setup and the Manager still run; Smooth Motion
-  activation is refused (fail-closed, nothing modified).
-- Not supported: 32-bit titles, anti-cheat titles, non-SM86 GPUs.
-- Historical note: earlier v0.4.x releases were limited to the validated 616.64
-  profile; that restriction was removed in v0.5.0-rc.1.
+- Not supported: other driver versions, 32-bit titles, anti-cheat titles.
 - Multi-GPU: the current Consumer Preview expects a single CUDA/NVIDIA target
   device. Explicit rendering-GPU selection is planned for a later release (a
   manager device-selection limitation, not a hardware incompatibility).
