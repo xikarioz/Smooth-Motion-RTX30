@@ -15,18 +15,23 @@ Smooth Motion SM86 让 NVIDIA 驱动级的 **NvPresent / Smooth Motion** 帧插�
 > 它使用 NVIDIA 的呈现级 Smooth Motion 路径，而无需游戏进行
 > Streamline / DLSS-G 集成。
 
-**⬇ [下载 Windows 版 —— 消费者预览版](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest)**
+**⬇ [下载 Windows 版 v0.5.0-rc.1 —— 实验性兼容预览（预发布）](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1)**
+
+> **当前测试版本：v0.5.0-rc.1（预发布）。** 包含管理器启动崩溃修复、简体中文安装程序动态字段修复，以及针对特定已识别 **591.86** NvPresent 版本的实验性**静态验证**路径。**616.64 仍为实机验证的黄金配置。** 591.86 尚未实机验证——请测试并反馈。
+>
+> GitHub 的 “latest” 徽章/标签仍指向上一个**稳定**版本；上面的预发布版本才是当前测试版本。
 
 RTX 30 / SM86 · D3D11 · D3D12 · 实验性 Vulkan · Windows 10/11 x64
 
-![最新版本](https://img.shields.io/github/v/release/xikarioz/Smooth-Motion-RTX30?label=release&color=3fae6a)
+![当前预发布版本](https://img.shields.io/badge/prerelease-v0.5.0--rc.1-orange)
 ![平台](https://img.shields.io/badge/platform-Windows-0078D6)
 ![GPU](https://img.shields.io/badge/GPU-RTX%2030%20%2F%20SM86-76B900)
 ![状态](https://img.shields.io/badge/status-Consumer%20Preview-orange)
 
-目标架构：**RTX 30 系列 / Ampere SM86。** **RTX 3090 + 驱动程序 616.64** 已通过
-物理验证；其他单 GPU 的 SM86 RTX 30 显卡在接受确切的驱动程序/配置文件时属于
-**实验性** —— 而非“不支持”。
+目标架构：**RTX 30 系列 / Ampere SM86。** **RTX 3090 + 驱动程序 616.64** 已通过实机
+验证；特定已识别的 **591.86** NvPresent 版本为**静态验证 / 实验性**。未识别的驱动
+程序并不等于“无法安装”——安装程序和管理器仍可运行，Smooth Motion 保持**故障关闭**，
+直到你安装的 NvPresent 二进制文件被识别并通过验证。
 
 **已在 16 款真实游戏中测试，涵盖多种引擎和启动环境 —— 包括 D3D11、D3D12 和 Game Pass 游戏。**
 
@@ -63,7 +68,7 @@ RTX 30 / SM86 · D3D11 · D3D12 · 实验性 Vulkan · Windows 10/11 x64
 
 ## 快速开始
 
-1. 从[最新版本](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest)下载 **`SmoothMotionSM86-Setup.exe`**。
+1. 从 [v0.5.0-rc.1 预发布版本](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1) 下载 **`SmoothMotionSM86-Setup.exe`**。
 2. 运行它（无需管理员权限，无需 Python，无需终端）。
 3. 打开 **Smooth Motion SM86**。
 4. 开启 **SMOOTH MOTION**。
@@ -94,20 +99,27 @@ RTX 30 / SM86 · D3D11 · D3D12 · 实验性 Vulkan · Windows 10/11 x64
 
 ## 兼容性
 
+**当前策略（v0.5.0-rc.1 及以后）：仅凭驱动程序版本不再决定是否可以安装本应用。**
+安装程序和管理器在未知驱动程序上仍可运行；Smooth Motion 激活保持**故障关闭**，直到
+安装的 NvPresent 二进制文件被识别并通过验证。
+
+| 配置 | 状态 | 管理器 | Smooth Motion |
+|---|---|---|---|
+| RTX 3090 + 驱动程序 616.64（黄金） | **实机验证** | 是 | 是 |
+| 特定已识别的 591.86 NvPresent 版本 | **静态验证 / 实验性** | 是 | 实验性（尚未实机验证） |
+| 未知 / 未验证的 NvPresent | 未验证 | 是 | 否——故障关闭 |
+| 非 SM86 GPU（RTX 40/50、RTX 20、GTX 10、AMD/Intel） | 引擎不支持 | 是 | 否 |
+| 多 GPU 系统 | 未实现设备选择 | 是 | 否 |
+
 三个彼此独立的维度，特意保持区分：
 
 - **硬件兼容性：** Ampere **SM86 / RTX 30 系列**是目标架构。
-- **物理验证：** 只有 **RTX 3090 + 驱动程序 616.64** 经过物理验证。
-- **其他单 GPU 的 SM86 RTX 30 显卡**在接受确切的驱动程序/配置文件时**在技术上被接纳**，并在通过物理验证之前属于**实验性**。
+- **实机验证：** 只有 **RTX 3090 + 驱动程序 616.64** 经过实机验证。
+- **其他单 GPU 的 SM86 RTX 30 显卡**在识别到确切的驱动程序/配置文件后属于**实验性**（并非“不支持”）。
+- **D3D11** 动态引擎实时路径：**仪器验证**。**D3D12**：在真实游戏中观察到可用（动态引擎仪器化目前尚无定论）。
+- **32 位游戏和受反作弊保护的游戏**不受支持。
 
-| 配置 | 状态 |
-|---|---|
-| RTX 3090 + 616.64 | **经过物理测试的黄金配置** |
-| D3D11 动态引擎实时路径 | **仪器验证** |
-| D3D12 真实游戏路径 | **观察到可用；动态引擎仪器化目前尚无定论** |
-| 其他单 GPU RTX 30 / SM86 显卡，已接受的配置文件 | **实验性** |
-| 其他驱动程序 | 尚不支持（故障关闭，不修改任何内容） |
-| 32 位游戏、受反作弊保护的游戏 | 不支持 |
+> 历史说明：v0.4.x 版本仅限已验证的 616.64 配置文件。该限制已在 v0.5.0-rc.1 中取消；见发行说明。
 
 详情与层级：[SUPPORT.zh-CN.md](SUPPORT.zh-CN.md) · [COMPATIBILITY.zh-CN.md](COMPATIBILITY.zh-CN.md) · [VALIDATION.zh-CN.md](VALIDATION.zh-CN.md)
 

@@ -156,10 +156,16 @@ is redistributed and the DriverStore is never modified.
   ON/OFF/ON on the golden configuration).
 - D3D12: selected titles — **observed working**; dynamic-engine runtime
   instrumentation currently **inconclusive** (not a regression).
-- Architecture compatible (experimental): other single-GPU RTX 30 / SM86 boards
-  with the same driver — same architecture, not physically validated.
+- Statically validated (experimental): the exact recognized NvPresent build from
+  driver 591.86 — not yet live-validated.
+- Architecture compatible (experimental): other single-GPU RTX 30 / SM86 boards once
+  the exact driver/profile is recognized — same architecture, not physically validated.
 - Experimental: Windows Vulkan.
-- Not supported: other driver versions, 32-bit titles, anti-cheat titles.
+- Unknown/unvalidated NvPresent: Setup and the Manager still run; Smooth Motion
+  activation is refused (fail-closed, nothing modified).
+- Not supported: 32-bit titles, anti-cheat titles, non-SM86 GPUs.
+- Historical note: earlier v0.4.x releases were limited to the validated 616.64
+  profile; that restriction was removed in v0.5.0-rc.1.
 - Multi-GPU: the current Consumer Preview expects a single CUDA/NVIDIA target
   device. Explicit rendering-GPU selection is planned for a later release (a
   manager device-selection limitation, not a hardware incompatibility).

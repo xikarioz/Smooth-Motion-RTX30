@@ -16,7 +16,7 @@ Este es el **origen canónico** de la redacción de niveles de evidencia del pro
 | API de gráficos | D3D11 y D3D12 nativos (producto empaquetado); Vulkan experimental |
 | Instalar / preparar / revertir / desinstalar | Compatible |
 
-Otras tarjetas SM86 RTX 30 de una sola GPU son compatibles con la arquitectura y son **experimentales** hasta su validación física. Otras versiones de controlador se rechazan (no se modifica nada).
+Otras tarjetas SM86 RTX 30 de una sola GPU son compatibles con la arquitectura y son **experimentales** hasta su validación física. La compilación exacta reconocida de NvPresent **591.86** está **validada estáticamente / experimental** (aún no validada en vivo). Con compilaciones de NvPresent desconocidas o no validadas, el instalador y el Administrador siguen funcionando y la activación de Smooth Motion se rechaza (cerrada por seguridad, no se modifica nada).
 
 ## Adaptación de compatibilidad
 

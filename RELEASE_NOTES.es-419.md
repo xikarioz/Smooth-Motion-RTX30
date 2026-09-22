@@ -155,11 +155,16 @@ no se redistribuye ningún binario de NVIDIA y el DriverStore nunca se modifica.
   instrumentalmente** (ON/OFF/ON en vivo en la configuración dorada).
 - D3D12: títulos seleccionados — **observado funcionando**; la instrumentación del
   runtime del motor dinámico actualmente es **no concluyente** (no es una regresión).
+- Validada estáticamente (experimental): la compilación exacta reconocida de NvPresent
+  **591.86** — aún no validada en vivo.
 - Compatible con la arquitectura (experimental): otras placas con una sola GPU RTX 30 /
-  SM86 con el mismo controlador — misma arquitectura, no validadas físicamente.
+  SM86 una vez reconocido el controlador/perfil exacto — misma arquitectura, no validadas físicamente.
 - Experimental: Vulkan en Windows.
-- No compatible: otras versiones de controlador, títulos de 32 bits, títulos con
-  antitrampas.
+- NvPresent desconocido/no validado: el instalador y el Administrador siguen funcionando;
+  la activación de Smooth Motion se rechaza (cerrada por seguridad, no se modifica nada).
+- No compatible: títulos de 32 bits, títulos con antitrampas, GPU que no sean SM86.
+- Nota histórica: las versiones v0.4.x anteriores estaban limitadas al perfil validado
+  616.64; esa restricción se eliminó en v0.5.0-rc.1.
 - Multi-GPU: la vista previa para consumidores actual espera un único dispositivo
   objetivo CUDA/NVIDIA. La selección explícita de la GPU de renderizado está prevista
   para una versión posterior (una limitación de selección de dispositivo del

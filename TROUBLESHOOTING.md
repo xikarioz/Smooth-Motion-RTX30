@@ -4,10 +4,13 @@ English | [简体中文](TROUBLESHOOTING.zh-CN.md) | [Español](TROUBLESHOOTING.
 
 ## Compatibility check says my GPU/driver is not supported
 
-The tool refuses instead of guessing. It physically validates a single board
-(RTX 3090) with driver 616.64; other driver versions and non-SM86 GPUs are refused.
-If you have a single RTX 30 / SM86 GPU with the validated driver, it is admitted
-as **experimental** when the exact driver/profile is accepted (not "unsupported").
+Installation is not blocked by the driver version: Setup and the Manager still run,
+and Smooth Motion activation is refused (fail-closed) until your installed NvPresent
+binary is recognized and validated. The project physically/live validates a single
+board (RTX 3090) with driver 616.64; the exact recognized **591.86** NvPresent build
+is **statically validated / experimental**. If you have a single RTX 30 / SM86 GPU,
+it is admitted as **experimental** once the exact driver/profile is recognized (not
+"unsupported").
 
 ## I have two GPUs (multi-GPU)
 
@@ -43,7 +46,9 @@ supported yet. See [SUPPORT.md](SUPPORT.md).
 
 ## "Unknown driver" / nothing is patched
 
-Correct: unknown drivers are refused, not patched. The tool never guesses.
+Correct — and expected. Unknown drivers are not patched; the tool never guesses.
+Installation and the Manager still work; only Smooth Motion activation is refused
+(fail-closed) until your NvPresent binary is recognized and validated.
 
 ## Clean removal
 

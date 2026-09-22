@@ -24,6 +24,18 @@
 同一个游戏在不同启动环境下可能合理地表现不同。请参阅
 [COMMUNITY_VALIDATION.md](docs/COMMUNITY_VALIDATION.md)。
 
+## 当前策略（v0.5.0-rc.1 及以后）
+
+仅凭驱动程序版本不再决定是否可以安装本应用。安装程序和管理器在未知驱动程序上
+仍可运行；Smooth Motion 激活保持**故障关闭**，直到安装的 NvPresent 二进制文件被
+识别并通过验证。
+
+| 配置 | 状态 | Smooth Motion |
+|---|---|---|
+| RTX 3090 + 驱动程序 616.64 | **LIVE_VALIDATED**（黄金） | 是 |
+| 特定已识别的 591.86 NvPresent 版本 | **STATICALLY_VALIDATED / 实验性** | 实验性；尚未实机验证 |
+| 未知 / 未验证的 NvPresent | 未验证 | 否——故障关闭 |
+
 ## Windows
 
 | GPU | 驱动程序 | API | 状态 |
@@ -32,7 +44,8 @@
 | RTX 3090 | 616.64 | D3D12 | **PROJECT_VALIDATED（真实游戏）** — 观察到可用；活动引擎运行时插桩目前尚无定论 |
 | RTX 3090 | 616.64 | Vulkan | PRACTICALLY_VALIDATED（研究路径）；打包启动 EXPERIMENTAL |
 | 其他单 GPU RTX 30 / SM86（3080、3070、3060、3050、笔记本） | 616.64 | D3D11 / D3D12 | EXPERIMENTAL（架构兼容；在确切的驱动程序/配置文件被接受时予以接纳） |
-| 任意 RTX 30 | 其他驱动程序 | — | UNTESTED（在验证前拒绝） |
+| 任意 RTX 30 | 特定已识别的 591.86 NvPresent | D3D11 / D3D12 | STATICALLY_VALIDATED（实验性；尚未实机验证） |
+| 任意 RTX 30 | 未知 / 未验证的 NvPresent | — | 安装程序 + 管理器可运行；Smooth Motion 被拒绝（故障关闭） |
 | 多 GPU 系统 | 616.64 | — | 设备选择未实现（见下文） |
 
 ## 设备选择

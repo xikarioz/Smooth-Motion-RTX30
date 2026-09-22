@@ -12,14 +12,17 @@
   controlador/perfil exacto — compatibles con la arquitectura, no validadas físicamente
 - No se requieren permisos de administrador
 
-Otras versiones de controlador y GPU que no sean SM86 se rechazan por diseño (de fallo
-seguro). Ver [SUPPORT.es-419.md](SUPPORT.es-419.md) y
+La instalación **no** depende de una versión exacta del controlador: el instalador y el
+Administrador también funcionan con controladores desconocidos. La activación de Smooth
+Motion permanece **cerrada por seguridad** hasta que tu binario NvPresent instalado sea
+reconocido y validado. Las GPU que no sean SM86 no son compatibles con el motor. Ver
+[SUPPORT.es-419.md](SUPPORT.es-419.md) y
 [COMPATIBILITY.es-419.md](COMPATIBILITY.es-419.md).
 
 ## Pasos
 
-1. Descarga **`SmoothMotionSM86-Setup.exe`** desde la
-   [última versión](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest).
+1. Descarga **`SmoothMotionSM86-Setup.exe`** desde el
+   [prelanzamiento v0.5.0-rc.1](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1).
 2. Verifica su SHA-256 contra `SHA256SUMS.txt` en la página de la versión.
 3. Ejecuta el instalador. Primero realiza una comprobación de solo lectura de
    **System Compatibility** (compatibilidad del sistema) y muestra tu GPU, tu controlador

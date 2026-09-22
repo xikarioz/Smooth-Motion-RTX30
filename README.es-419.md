@@ -14,18 +14,25 @@ Smooth Motion SM86 habilita la ruta de interpolación de fotogramas **NvPresent 
 > Usa la ruta Smooth Motion a nivel de presentación de NVIDIA en lugar de requerir la
 > integración Streamline / DLSS-G de un juego.
 
-**⬇ [Descargar para Windows — Vista previa para consumidores](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest)**
+**⬇ [Descargar v0.5.0-rc.1 para Windows — Vista previa de compatibilidad experimental (prelanzamiento)](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1)**
+
+> **Versión de prueba actual: v0.5.0-rc.1 (prelanzamiento).** Incluye la corrección del fallo de inicio del Administrador, la corrección de los campos dinámicos del instalador en chino simplificado y una ruta **validada estáticamente** experimental para la compilación exacta reconocida de NvPresent **591.86**. **616.64 sigue siendo la configuración dorada validada en vivo.** 591.86 *no* está validada en vivo todavía: pruébala y cuéntanoslo.
+>
+> La insignia/etiqueta "latest" de GitHub sigue apuntando a la última versión **estable**; el prelanzamiento anterior es la compilación de prueba actual.
 
 RTX 30 / SM86 · D3D11 · D3D12 · Vulkan experimental · Windows 10/11 x64
 
-![Última versión](https://img.shields.io/github/v/release/xikarioz/Smooth-Motion-RTX30?label=release&color=3fae6a)
+![Prelanzamiento actual](https://img.shields.io/badge/prerelease-v0.5.0--rc.1-orange)
 ![Plataforma](https://img.shields.io/badge/platform-Windows-0078D6)
 ![GPU](https://img.shields.io/badge/GPU-RTX%2030%20%2F%20SM86-76B900)
 ![Estado](https://img.shields.io/badge/status-Consumer%20Preview-orange)
 
 Arquitectura objetivo: **serie RTX 30 / Ampere SM86.** La **RTX 3090 + controlador
-616.64** está validada físicamente; otras tarjetas RTX 30 SM86 de una sola GPU son
-**experimentales** cuando se acepta el controlador/perfil exacto — no “no compatibles”.
+616.64** está validada en vivo; la compilación exacta reconocida de NvPresent
+**591.86** está **validada estáticamente / experimental**. Un controlador no
+reconocido no significa “no se puede instalar”: el instalador y el Administrador
+siguen funcionando, con Smooth Motion **cerrado por seguridad** hasta que el binario
+NvPresent instalado sea reconocido y validado.
 
 **Probado en 16 juegos reales, en múltiples motores y entornos de lanzamiento — incluidos títulos D3D11, D3D12 y de Game Pass.**
 
@@ -62,7 +69,7 @@ La demostración usará metraje de juego sin modificar, sin interpolación sint�
 
 ## Inicio rápido
 
-1. Descarga **`SmoothMotionSM86-Setup.exe`** desde la [última versión](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest).
+1. Descarga **`SmoothMotionSM86-Setup.exe`** desde el [prelanzamiento v0.5.0-rc.1](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1).
 2. Ejecútalo (sin derechos de administrador, sin Python, sin terminal).
 3. Abre **Smooth Motion SM86**.
 4. Activa **SMOOTH MOTION**.
@@ -93,20 +100,29 @@ Distinta capa de integración, distinto punto de adaptación. Este proyecto trab
 
 ## Compatibilidad
 
+**Política actual (v0.5.0-rc.1 y posteriores): la versión del controlador por sí sola
+ya no decide si la aplicación puede instalarse.** El instalador y el Administrador
+funcionan con controladores desconocidos; la activación de Smooth Motion permanece
+**cerrada por seguridad** hasta que el binario NvPresent instalado sea reconocido y
+validado.
+
+| Configuración | Estado | Administrador | Smooth Motion |
+|---|---|---|---|
+| RTX 3090 + controlador 616.64 (dorada) | **Validada en vivo** | Sí | Sí |
+| Compilación exacta reconocida de NvPresent 591.86 | **Validada estáticamente / experimental** | Sí | Experimental (aún no validada en vivo) |
+| NvPresent desconocido / no validado | No validado | Sí | No — cerrado por seguridad |
+| GPU no SM86 (RTX 40/50, RTX 20, GTX 10, AMD/Intel) | No compatible con el motor | Sí | No |
+| Sistemas multi-GPU | Selección de dispositivo no implementada | Sí | No |
+
 Tres dimensiones separadas, mantenidas distintas a propósito:
 
 - **Compatibilidad de hardware:** Ampere **SM86 / serie RTX 30** es la arquitectura objetivo.
-- **Validación física:** solo la **RTX 3090 + controlador 616.64** está validada físicamente.
-- **Otras tarjetas RTX 30 SM86 de una sola GPU** se **admiten técnicamente cuando se acepta el controlador/perfil exacto**, y son **experimentales** hasta su validación física.
+- **Validación física/en vivo:** solo la **RTX 3090 + controlador 616.64** está validada físicamente.
+- **Otras tarjetas RTX 30 SM86 de una sola GPU** son **experimentales** una vez reconocido el controlador/perfil exacto (no “no compatibles”).
+- **D3D11** ruta en vivo del motor dinámico: **validada instrumentalmente**. **D3D12**: observada funcionando en juegos reales (instrumentación del motor activo actualmente no concluyente).
+- **Títulos de 32 bits y protegidos por antitrampas** no son compatibles.
 
-| Configuración | Estado |
-|---|---|
-| RTX 3090 + 616.64 | **Configuración dorada probada físicamente** |
-| Ruta en vivo del motor dinámico D3D11 | **Validada instrumentalmente** |
-| Ruta de juego real D3D12 | **Observada funcionando; la instrumentación del motor dinámico es actualmente no concluyente** |
-| Otras tarjetas RTX 30 / SM86 de una sola GPU, perfil aceptado | **Experimental** |
-| Otros controladores | Aún no compatibles (fallo seguro, no se modifica nada) |
-| Títulos de 32 bits, títulos protegidos por antitrampas | No compatibles |
+> Nota histórica: las versiones v0.4.x estaban restringidas al perfil validado 616.64. Esa restricción se eliminó en v0.5.0-rc.1; consulta las notas de la versión.
 
 Detalles y niveles: [SUPPORT.es-419.md](SUPPORT.es-419.md) · [COMPATIBILITY.es-419.md](COMPATIBILITY.es-419.md) · [VALIDATION.es-419.md](VALIDATION.es-419.md)
 

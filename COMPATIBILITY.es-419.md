@@ -24,6 +24,19 @@ Los resultados se registran por combinación de (GPU, controlador, juego, API, t
 el mismo juego puede diferir legítimamente entre entornos de inicio. Consulta
 [COMMUNITY_VALIDATION.md](docs/COMMUNITY_VALIDATION.md).
 
+## Política actual (v0.5.0-rc.1 y posteriores)
+
+La versión del controlador por sí sola ya no decide si la aplicación puede instalarse.
+El instalador y el Administrador funcionan con controladores desconocidos; la
+activación de Smooth Motion permanece **cerrada por seguridad** hasta que el binario
+NvPresent instalado sea reconocido y validado.
+
+| Configuración | Estado | Smooth Motion |
+|---|---|---|
+| RTX 3090 + controlador 616.64 | **LIVE_VALIDATED** (dorada) | Sí |
+| Compilación exacta reconocida de NvPresent 591.86 | **STATICALLY_VALIDATED / experimental** | Experimental; aún no validada en vivo |
+| NvPresent desconocido / no validado | No validado | No — cerrado por seguridad |
+
 ## Windows
 
 | GPU | Controlador | API | Estado |
@@ -32,7 +45,8 @@ el mismo juego puede diferir legítimamente entre entornos de inicio. Consulta
 | RTX 3090 | 616.64 | D3D12 | **PROJECT_VALIDATED (juego real)** — observado funcionando; la instrumentación en tiempo de ejecución del motor activo actualmente es no concluyente |
 | RTX 3090 | 616.64 | Vulkan | PRACTICALLY_VALIDATED (ruta de investigación); inicio empaquetado EXPERIMENTAL |
 | Otras RTX 30 / SM86 de una sola GPU (3080, 3070, 3060, 3050, portátil) | 616.64 | D3D11 / D3D12 | EXPERIMENTAL (compatible con la arquitectura; admitida cuando se acepta el controlador/perfil exacto) |
-| Cualquier RTX 30 | otros controladores | — | UNTESTED (se rechaza hasta validarse) |
+| Cualquier RTX 30 | NvPresent 591.86 exacto reconocido | D3D11 / D3D12 | STATICALLY_VALIDATED (experimental; aún no validada en vivo) |
+| Cualquier RTX 30 | NvPresent desconocido / no validado | — | El instalador + el Administrador funcionan; Smooth Motion se rechaza (cerrado por seguridad) |
 | Sistemas multi-GPU | 616.64 | — | Selección de dispositivo no implementada (ver abajo) |
 
 ## Selección de dispositivo

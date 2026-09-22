@@ -7,9 +7,12 @@ No. El paquete de la versión es autónomo.
 
 **¿Qué GPU/controlador necesito?**
 Arquitectura objetivo: serie RTX 30 / Ampere **SM86**. La **RTX 3090 + controlador
-616.64** está validada físicamente; otras placas RTX 30 SM86 de una sola GPU son
-**experimentales** donde se acepta el controlador/perfil exacto. Otras versiones de
-controlador y GPU que no sean SM86 se rechazan.
+616.64** está validada en vivo; la compilación exacta reconocida de NvPresent **591.86**
+está **validada estáticamente / experimental**; otras placas RTX 30 SM86 de una sola GPU
+son **experimentales** donde se reconoce el controlador/perfil exacto. Con un controlador
+desconocido/no validado la app igualmente se instala y el Administrador se abre — la
+activación de Smooth Motion permanece **cerrada por seguridad** hasta que tu binario
+NvPresent sea reconocido y validado. Las GPU que no sean SM86 no son compatibles con el motor.
 
 **Tengo dos GPU: ¿mi RTX 30 no es compatible?**
 No. Sistemas con varias GPU: la actual versión preliminar para consumidores espera un
