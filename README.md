@@ -179,6 +179,8 @@ and repeated live state transitions (300 transitions, 0 state mismatches).
 ## Known limitations
 
 - Unsigned Consumer Preview — SmartScreen may prompt; verify the SHA-256.
+- Closing the window (title-bar **X**) keeps Smooth Motion SM86 in the **system tray**
+  so background monitoring continues. Use the tray icon's **Exit** to quit completely.
 - Storefront titles that relaunch into a new process (some Game Pass / Epic) are
   not reliably followed yet.
 - Windows Vulkan is experimental; no in-game toggle there.

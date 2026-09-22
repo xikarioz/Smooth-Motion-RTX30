@@ -5,6 +5,11 @@
 **¿Necesito Python?**
 No. El paquete de la versión es autónomo.
 
+**¿Por qué Smooth Motion sigue ejecutándose después de cerrar la ventana?**
+La X de la barra de título minimiza a la bandeja del sistema a propósito (la
+monitorización en segundo plano sigue activa). Para salir por completo, haz clic derecho
+en el icono de la bandeja y elige Salir.
+
 **¿Qué GPU/controlador necesito?**
 Arquitectura objetivo: serie RTX 30 / Ampere **SM86**. La **RTX 3090 + controlador
 616.64** está validada en vivo; la compilación exacta reconocida de NvPresent **591.86**

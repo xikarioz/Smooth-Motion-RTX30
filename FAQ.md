@@ -5,6 +5,11 @@ English | [简体中文](FAQ.zh-CN.md) | [Español](FAQ.es-419.md)
 **Do I need Python?**
 No. The release package is self-contained.
 
+**Why is Smooth Motion still running after I close the window?**
+The title-bar **X** minimizes to the system tray on purpose, so background monitoring
+and live controls stay active. To exit completely, right-click the tray icon and choose
+**Exit**.
+
 **Which GPU/driver do I need?**
 Target architecture: RTX 30-series / Ampere **SM86**. The **RTX 3090 + driver
 616.64** is live validated; the exact recognized NvPresent build from driver

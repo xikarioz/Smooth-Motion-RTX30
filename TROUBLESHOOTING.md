@@ -2,6 +2,16 @@ English | [简体中文](TROUBLESHOOTING.zh-CN.md) | [Español](TROUBLESHOOTING.
 
 # Troubleshooting
 
+## I closed the window but the app is still running
+
+By design: the title-bar **X** minimizes Smooth Motion SM86 to the **system tray** and
+keeps it running so background monitoring and live controls continue. The window is
+hidden, not exited.
+
+To close it completely: right-click the **tray icon** and choose **Exit**. Only then do
+the Manager process, the tray icon and the global hotkey stop. (If the tray icon is
+hidden by Windows, open the hidden-icons overflow in the taskbar.)
+
 ## Compatibility check says my GPU/driver is not supported
 
 Installation is not blocked by the driver version: Setup and the Manager still run,
