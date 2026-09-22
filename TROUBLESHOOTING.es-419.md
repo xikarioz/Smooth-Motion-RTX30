@@ -2,6 +2,17 @@
 
 # Solución de problemas
 
+## Cerré la ventana pero la aplicación sigue ejecutándose
+
+Es intencional: la **X** de la barra de título minimiza Smooth Motion SM86 a la
+**bandeja del sistema** y lo mantiene en ejecución para que la monitorización en
+segundo plano y los controles en vivo continúen. La ventana está oculta, no cerrada.
+
+Para cerrarlo por completo: haz clic derecho en el **icono de la bandeja** y elige
+**Salir**. Solo entonces se detienen el proceso del Administrador, el icono de la
+bandeja y el atajo global. (Si Windows oculta el icono, abre el desbordamiento de
+iconos ocultos de la barra de tareas.)
+
 ## La comprobación de compatibilidad dice que mi GPU/controlador no es compatible
 
 La instalación no se bloquea por la versión del controlador: el instalador y el

@@ -148,6 +148,7 @@ Resumen: en la compilación dorada validada **RTX 3090 / controlador 616.64**, l
 ## Limitaciones conocidas
 
 - Vista previa para consumidores sin firmar — SmartScreen puede avisar; verifica el SHA-256.
+- Cerrar la ventana (la **X** de la barra de título) mantiene Smooth Motion SM86 en la **bandeja del sistema** para seguir monitorizando en segundo plano. Usa **Salir** en el icono de la bandeja para cerrarlo por completo.
 - Los títulos de tiendas que se relanzan en un proceso nuevo (algunos de Game Pass / Epic) aún no se siguen de forma fiable.
 - Vulkan en Windows es experimental; no hay interruptor dentro del juego.
 - **Sistemas multi-GPU: la Vista previa para consumidores actual espera un único dispositivo objetivo CUDA/NVIDIA. La selección explícita de la GPU de renderizado está prevista para una versión posterior.** Es una limitación de selección de dispositivo del administrador, **no** una incompatibilidad de hardware.
