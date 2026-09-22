@@ -12,13 +12,15 @@ English | [简体中文](INSTALL.zh-CN.md) | [Español](INSTALL.es-419.md)
   driver/profile is accepted — architecture-compatible, not physically validated
 - No administrator rights required
 
-Other driver versions and non-SM86 GPUs are refused by design (fail closed). See
-[SUPPORT.md](SUPPORT.md) and [COMPATIBILITY.md](COMPATIBILITY.md).
+Installation is **not** tied to one exact driver version: Setup and the Manager run
+on unknown drivers too. Smooth Motion activation is **fail-closed** until your
+installed NvPresent binary is recognized and validated. Non-SM86 GPUs are not
+supported by the engine. See [SUPPORT.md](SUPPORT.md) and [COMPATIBILITY.md](COMPATIBILITY.md).
 
 ## Steps
 
 1. Download **`SmoothMotionSM86-Setup.exe`** from the
-   [latest release](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest).
+   [v0.5.0-rc.1 prerelease](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1).
 2. Verify its SHA-256 against `SHA256SUMS.txt` on the release page.
 3. Run the installer. It performs a read-only **System Compatibility** check first
    and shows your GPU, NVIDIA driver, architecture and a plain-language status:

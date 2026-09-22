@@ -7,9 +7,12 @@ No. The release package is self-contained.
 
 **Which GPU/driver do I need?**
 Target architecture: RTX 30-series / Ampere **SM86**. The **RTX 3090 + driver
-616.64** is physically validated; other single-GPU SM86 RTX 30 boards are
-**experimental** where the exact driver/profile is accepted. Other driver versions
-and non-SM86 GPUs are refused.
+616.64** is live validated; the exact recognized NvPresent build from driver
+**591.86** is **statically validated / experimental**; other single-GPU SM86 RTX 30
+boards are **experimental** where the exact driver/profile is recognized. On an
+unknown/unvalidated driver the app still installs and the Manager opens — Smooth
+Motion activation stays **fail-closed** until your NvPresent binary is recognized and
+validated. Non-SM86 GPUs are not supported by the engine.
 
 **I have two GPUs — is my RTX 30 unsupported?**
 No. Multi-GPU systems: the current Consumer Preview expects a single CUDA/NVIDIA

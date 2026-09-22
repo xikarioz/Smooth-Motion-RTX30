@@ -4,10 +4,13 @@
 
 ## La comprobación de compatibilidad dice que mi GPU/controlador no es compatible
 
-La herramienta rechaza en lugar de adivinar. Solo valida físicamente una tarjeta
-(RTX 3090) con el controlador 616.64; otras versiones de controlador y GPU que no son
-SM86 se rechazan. Si tienes una sola GPU RTX 30 / SM86 con el controlador validado, se
-admite como **experimental** cuando se acepta el controlador/perfil exacto (no "no compatible").
+La instalación no se bloquea por la versión del controlador: el instalador y el
+Administrador siguen funcionando, y la activación de Smooth Motion se rechaza (cerrada por
+seguridad) hasta que tu binario NvPresent instalado sea reconocido y validado. El proyecto
+solo valida físicamente una tarjeta (RTX 3090) con el controlador 616.64; la compilación
+exacta reconocida de NvPresent **591.86** está **validada estáticamente / experimental**.
+Si tienes una sola GPU RTX 30 / SM86, se admite como **experimental** una vez reconocido el
+controlador/perfil exacto (no "no compatible").
 
 ## Tengo dos GPU (multi-GPU)
 
@@ -42,8 +45,10 @@ compatibles. Ver [SUPPORT.md](SUPPORT.es-419.md).
 
 ## "Controlador desconocido" / no se modifica nada
 
-Correcto: los controladores desconocidos se rechazan, no se modifican. La herramienta
-nunca adivina.
+Correcto — y esperado. Los controladores desconocidos no se modifican; la herramienta
+nunca adivina. El instalador y el Administrador siguen funcionando; solo la activación de
+Smooth Motion se rechaza (cerrada por seguridad) hasta que tu binario NvPresent sea
+reconocido y validado.
 
 ## Eliminación limpia
 

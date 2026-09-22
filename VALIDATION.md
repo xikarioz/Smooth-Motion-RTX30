@@ -21,7 +21,10 @@ documents link here instead of restating nuanced claims.
 | Install / prepare / rollback / uninstall | Supported |
 
 Other single-GPU SM86 RTX 30 boards are architecture-compatible and **experimental**
-until physically validated. Other driver versions are refused (nothing is modified).
+until physically validated. The exact recognized NvPresent build from driver **591.86**
+is **statically validated / experimental** (not yet live-validated). On unknown or
+unvalidated NvPresent builds, installation and the Manager still run and Smooth Motion
+activation is refused (fail-closed, nothing is modified).
 
 ## Compatibility adaptation
 

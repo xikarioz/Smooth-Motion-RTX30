@@ -16,18 +16,29 @@ expose it — as a one-click Windows utility.
 > It uses NVIDIA's presentation-level Smooth Motion path instead of requiring a
 > game's Streamline / DLSS-G integration.
 
-**⬇ [Download for Windows — Consumer Preview](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest)**
+**⬇ [Download v0.5.0-rc.1 for Windows — Experimental Compatibility Preview (prerelease)](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1)**
+
+> **Current test release: v0.5.0-rc.1 (prerelease).** Includes the Manager startup
+> crash fix, the Simplified Chinese installer dynamic-field fix, and an experimental
+> **statically validated** path for the exact recognized **591.86** NvPresent build.
+> **616.64 remains the live-validated golden configuration.** 591.86 is *not* live
+> validated yet — please test it and report back.
+>
+> The GitHub "latest" badge/tag intentionally still points at the last **stable**
+> release; the prerelease above is the current test build.
 
 RTX 30 / SM86 · D3D11 · D3D12 · Experimental Vulkan · Windows 10/11 x64
 
-![Latest release](https://img.shields.io/github/v/release/xikarioz/Smooth-Motion-RTX30?label=release&color=3fae6a)
+![Current prerelease](https://img.shields.io/badge/prerelease-v0.5.0--rc.1-orange)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6)
 ![GPU](https://img.shields.io/badge/GPU-RTX%2030%20%2F%20SM86-76B900)
 ![Status](https://img.shields.io/badge/status-Consumer%20Preview-orange)
 
 Target architecture: **RTX 30-series / Ampere SM86.** The **RTX 3090 + driver
-616.64** is physically validated; other single-GPU SM86 RTX 30 boards are
-**experimental** where the exact driver/profile is accepted — not "unsupported".
+616.64** is live validated; the exact recognized NvPresent build from driver
+**591.86** is **statically validated / experimental**. An unrecognized driver is not
+"unsupported" for installation — Setup and the Manager still run, with Smooth Motion
+**fail-closed** until your installed NvPresent binary is recognized and validated.
 
 **Tested in 16 real games across multiple engines and launch environments —
 including D3D11, D3D12 and Game Pass titles.**
@@ -69,7 +80,7 @@ no playback-speed manipulation.
 
 ## Quick start
 
-1. Download **`SmoothMotionSM86-Setup.exe`** from the [latest release](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest).
+1. Download **`SmoothMotionSM86-Setup.exe`** from the [v0.5.0-rc.1 prerelease](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1).
 2. Run it (no administrator rights, no Python, no terminal).
 3. Open **Smooth Motion SM86**.
 4. Turn **SMOOTH MOTION** on.
@@ -105,21 +116,31 @@ the driver's presentation backend, not the game's DLSS-FG integration.
 
 ## Compatibility
 
+**Current policy (v0.5.0-rc.1 and later): driver version alone no longer decides
+whether the app may be installed.** Setup and the Manager run on unknown drivers;
+Smooth Motion activation stays **fail-closed** until the installed NvPresent binary
+is recognized and validated.
+
+| Configuration | Status | Manager | Smooth Motion |
+|---|---|---|---|
+| RTX 3090 + driver 616.64 (golden) | **Live validated** | Yes | Yes |
+| Exact recognized NvPresent build from driver 591.86 | **Statically validated / experimental** | Yes | Experimental (not yet live-validated) |
+| Unknown / unvalidated NvPresent | Unvalidated | Yes | No — fail-closed |
+| Non-SM86 GPU (RTX 40/50, RTX 20, GTX 10, AMD/Intel) | Not supported by the engine | Yes | No |
+| Multi-GPU systems | Device selection not implemented | Yes | No |
+
 Three separate dimensions, kept distinct on purpose:
 
 - **Hardware compatibility:** Ampere **SM86 / RTX 30-series** is the target architecture.
-- **Physical validation:** only the **RTX 3090 + driver 616.64** is physically validated.
-- **Other single-GPU SM86 RTX 30 boards** are **technically admitted when the exact
-  driver/profile is accepted**, and **experimental** until physically validated.
+- **Physical/live validation:** only the **RTX 3090 + driver 616.64** is physically validated.
+- **Other single-GPU SM86 RTX 30 boards** are **experimental** once the exact
+  driver/profile is recognized (not "unsupported").
+- **D3D11** dynamic-engine live path: **instrumentally validated**. **D3D12**: observed
+  working in real games (active-engine instrumentation currently inconclusive).
+- **32-bit titles and anti-cheat protected titles** are not supported.
 
-| Configuration | Status |
-|---|---|
-| RTX 3090 + 616.64 | **Physically tested golden configuration** |
-| D3D11 dynamic-engine live path | **Instrumentally validated** |
-| D3D12 real-game path | **Observed working; dynamic-engine instrumentation currently inconclusive** |
-| Other single-GPU RTX 30 / SM86 boards, accepted profile | **Experimental** |
-| Other drivers | Not yet supported (fail closed, nothing modified) |
-| 32-bit titles, anti-cheat protected titles | Not supported |
+> Historical note: v0.4.x releases were restricted to the validated 616.64 profile.
+> That restriction was removed in v0.5.0-rc.1; see the release notes.
 
 Details and tiers: [SUPPORT.md](SUPPORT.md) · [COMPATIBILITY.md](COMPATIBILITY.md) · [VALIDATION.md](VALIDATION.md)
 

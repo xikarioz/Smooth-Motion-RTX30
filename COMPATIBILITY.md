@@ -24,6 +24,18 @@ Results are recorded per (GPU, driver, game, API, storefront, launch method)
 combination; the same game may legitimately differ across launch environments. See
 [COMMUNITY_VALIDATION.md](docs/COMMUNITY_VALIDATION.md).
 
+## Current policy (v0.5.0-rc.1 and later)
+
+Driver version alone no longer decides whether the app may be installed. Setup and
+the Manager run on unknown drivers; Smooth Motion activation is **fail-closed** until
+the installed NvPresent binary is recognized and validated.
+
+| Configuration | Status | Smooth Motion |
+|---|---|---|
+| RTX 3090 + driver 616.64 | **LIVE_VALIDATED** (golden) | Yes |
+| Exact recognized NvPresent build from driver 591.86 | **STATICALLY_VALIDATED / experimental** | Experimental; not yet live-validated |
+| Unknown / unvalidated NvPresent | Unvalidated | No — fail-closed |
+
 ## Windows
 
 | GPU | Driver | API | Status |
@@ -32,7 +44,8 @@ combination; the same game may legitimately differ across launch environments. S
 | RTX 3090 | 616.64 | D3D12 | **PROJECT_VALIDATED (real-game)** — observed working; active-engine runtime instrumentation currently inconclusive |
 | RTX 3090 | 616.64 | Vulkan | PRACTICALLY_VALIDATED (research path); packaged launch EXPERIMENTAL |
 | Other single-GPU RTX 30 / SM86 (3080, 3070, 3060, 3050, laptop) | 616.64 | D3D11 / D3D12 | EXPERIMENTAL (architecture-compatible; admitted when the exact driver/profile is accepted) |
-| Any RTX 30 | other drivers | — | UNTESTED (refused until validated) |
+| Any RTX 30 | exact recognized 591.86 NvPresent | D3D11 / D3D12 | STATICALLY_VALIDATED (experimental; not yet live-validated) |
+| Any RTX 30 | unknown / unvalidated NvPresent | — | Setup + Manager run; Smooth Motion refused (fail-closed) |
 | Multi-GPU systems | 616.64 | — | Device selection not implemented (see below) |
 
 ## Device selection

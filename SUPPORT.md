@@ -2,8 +2,9 @@ English | [简体中文](SUPPORT.zh-CN.md) | [Español](SUPPORT.es-419.md)
 
 # Support status
 
-Smooth Motion SM86 supports a deliberately narrow, validated configuration. Other
-combinations are refused rather than guessed.
+Smooth Motion SM86 targets a deliberately narrow, validated architecture. Installation
+and the Manager run on unknown drivers too; Smooth Motion activation is refused
+(fail-closed) until your installed NvPresent binary is recognized and validated.
 
 Three separate dimensions are tracked (do not merge them):
 
@@ -33,7 +34,7 @@ Three separate dimensions are tracked (do not merge them):
 
 ## Not supported
 
-- Other driver versions (refused; no guessing).
+- Smooth Motion activation on unknown/unvalidated NvPresent builds (installation and the Manager still work; activation is fail-closed).
 - Non-SM86 GPUs (RTX 40/50, RTX 20, GTX 10, AMD/Intel).
 - 32-bit titles.
 - Anti-cheat protected or competitive multiplayer titles.
