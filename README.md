@@ -16,20 +16,17 @@ expose it — as a one-click Windows utility.
 > It uses NVIDIA's presentation-level Smooth Motion path instead of requiring a
 > game's Streamline / DLSS-G integration.
 
-**⬇ [Download v0.5.0-rc.1 for Windows — Experimental Compatibility Preview (prerelease)](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1)**
+**⬇ [Download Smooth Motion SM86 v0.5.0 for Windows](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest)**
 
-> **Current test release: v0.5.0-rc.1 (prerelease).** Includes the Manager startup
-> crash fix, the Simplified Chinese installer dynamic-field fix, and an experimental
-> **statically validated** path for the exact recognized **591.86** NvPresent build.
-> **616.64 remains the live-validated golden configuration.** 591.86 is *not* live
-> validated yet — please test it and report back.
->
-> The GitHub "latest" badge/tag intentionally still points at the last **stable**
-> release; the prerelease above is the current test build.
+> **Current release: v0.5.0.** Includes the Manager startup crash fix, the Simplified
+> Chinese installer dynamic-field fix, a clarified close/tray behaviour, and an
+> experimental **statically validated** path for the exact recognized **591.86**
+> NvPresent build. **616.64 remains the live-validated golden configuration.** 591.86 is
+> *not* live validated yet — please test it and report back.
 
 RTX 30 / SM86 · D3D11 · D3D12 · Experimental Vulkan · Windows 10/11 x64
 
-![Current prerelease](https://img.shields.io/badge/prerelease-v0.5.0--rc.1-orange)
+![Latest release](https://img.shields.io/github/v/release/xikarioz/Smooth-Motion-RTX30?label=release&color=3fae6a)
 ![Platform](https://img.shields.io/badge/platform-Windows-0078D6)
 ![GPU](https://img.shields.io/badge/GPU-RTX%2030%20%2F%20SM86-76B900)
 ![Status](https://img.shields.io/badge/status-Consumer%20Preview-orange)
@@ -80,7 +77,7 @@ no playback-speed manipulation.
 
 ## Quick start
 
-1. Download **`SmoothMotionSM86-Setup.exe`** from the [v0.5.0-rc.1 prerelease](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1).
+1. Download **`SmoothMotionSM86-Setup.exe`** from the [latest release](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest).
 2. Run it (no administrator rights, no Python, no terminal).
 3. Open **Smooth Motion SM86**.
 4. Turn **SMOOTH MOTION** on.

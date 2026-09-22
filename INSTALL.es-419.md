@@ -22,7 +22,7 @@ reconocido y validado. Las GPU que no sean SM86 no son compatibles con el motor.
 ## Pasos
 
 1. Descarga **`SmoothMotionSM86-Setup.exe`** desde el
-   [prelanzamiento v0.5.0-rc.1](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.0-rc.1).
+   [última versión](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest).
 2. Verifica su SHA-256 contra `SHA256SUMS.txt` en la página de la versión.
 3. Ejecuta el instalador. Primero realiza una comprobación de solo lectura de
    **System Compatibility** (compatibilidad del sistema) y muestra tu GPU, tu controlador
