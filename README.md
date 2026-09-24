@@ -24,6 +24,8 @@ expose it — as a one-click Windows utility.
 > NvPresent build. **616.64 remains the live-validated golden configuration.** 591.86 is
 > *not* live validated yet — please test it and report back.
 
+**Preview available:** [v0.5.2-alpha.1](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.2-alpha.1) addresses the open launcher/tray reports. It is a prerelease, not the stable download above; [read the tested scope and remaining limitations](RELEASE_0.5.2_ALPHA.md) before installing.
+
 RTX 30 / SM86 · D3D11 · D3D12 · Experimental Vulkan · Windows 10/11 x64
 
 ![Latest release](https://img.shields.io/github/v/release/xikarioz/Smooth-Motion-RTX30?label=release&color=3fae6a)
