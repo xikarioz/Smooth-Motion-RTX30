@@ -163,6 +163,16 @@ RTX 30 / SM86 · D3D11 · D3D12 · 实验性 Vulkan · Windows 10/11 x64
 
 *在已验证的 RTX 3090 + 驱动程序 616.64 上进行的真实 v0.4.3 Setup 运行。*
 
+## Linux（实验性预览版，需要反馈）
+
+首个 Linux 版本以**预发布**形式提供：[linux-v0.1.0-experimental](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/linux-v0.1.0-experimental)。
+
+- Linux 路线已在研究中于 **RTX 3080 · Ubuntu 26.04 · Wayland · NVIDIA 595.91.07** 上用 Hades（通过 Proton 运行的 DirectX）验证。
+  **本打包安装程序尚未由项目在真实 Linux 硬件上运行过。** 请试用并反馈结果。
+- 仅识别 NVIDIA **595.91.07** 驱动。其他驱动可以正常安装，但 Smooth Motion 保持**关闭**（失败即关闭），不会修改任何内容。
+- 安装在用户目录，无需 root；绝不修改系统中的 NVIDIA 库。
+- 无论能否运行，请使用 [Linux 标签](https://github.com/xikarioz/Smooth-Motion-RTX30/issues/new?labels=linux) 提交结果。
+
 ## 路线图
 
 更多 RTX 30 物理验证 · 更多驱动程序配置文件 · Game Pass / Epic 无缝启动 · Vulkan 产品化 · 多 GPU 定向 · 签名版本。见 [ROADMAP.zh-CN.md](ROADMAP.zh-CN.md)。

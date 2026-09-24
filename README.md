@@ -205,6 +205,18 @@ is installed:
 
 *A real v0.4.3 Setup run on the validated RTX 3090 + driver 616.64.*
 
+## Linux (experimental preview, feedback wanted)
+
+A first Linux build is available as a **prerelease**: [linux-v0.1.0-experimental](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/linux-v0.1.0-experimental).
+
+- The Linux line was validated in research on **RTX 3080 · Ubuntu 26.04 · Wayland · NVIDIA 595.91.07**
+  with Hades (DirectX through Proton). **This packaged installer has not yet been run on real Linux
+  hardware by the project.** Please try it and report back.
+- Only NVIDIA **595.91.07** is recognized. Any other driver installs fine, but Smooth Motion stays
+  **off** (fail-closed) and nothing is modified.
+- User-local install, no root; system NVIDIA libraries are never modified.
+- Report results (working or not) with the [Linux issue label](https://github.com/xikarioz/Smooth-Motion-RTX30/issues/new?labels=linux).
+
 ## Roadmap
 
 More RTX 30 physical validation · more driver profiles · Game Pass / Epic seamless
