@@ -17,6 +17,8 @@ Smooth Motion SM86 让 NVIDIA 驱动级的 **NvPresent / Smooth Motion** 帧插�
 
 **⬇ [下载 Windows 版 Smooth Motion SM86 v0.5.0](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest)**
 
+> 🎮 **专为单人和离线游戏设计。** 不支持带反作弊的在线游戏（BattlEye、Easy Anti-Cheat、Vanguard 等）：反作弊系统不允许游戏内出现额外组件，在这些游戏中使用可能会危及你的账号。管理器会拦截它能检测到的游戏。其他游戏尽情享受更流畅的画面吧。
+
 > **当前版本：v0.5.0。** 包含管理器启动崩溃修复、简体中文安装程序动态字段修复、更清晰的关闭/托盘行为说明，以及针对特定已识别 **591.86** NvPresent 版本的实验性**静态验证**路径。**616.64 仍为实机验证的黄金配置。** 591.86 尚未实机验证——请测试并反馈。
 
 **预览版：** [v0.5.2-alpha.1](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.2-alpha.1) 针对仍开放的启动器和托盘问题。它不是上面的稳定版；安装前请阅读[已验证范围与待确认事项](RELEASE_0.5.2_ALPHA.md)。

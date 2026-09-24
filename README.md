@@ -18,6 +18,8 @@ expose it — as a one-click Windows utility.
 
 **⬇ [Download Smooth Motion SM86 v0.5.0 for Windows](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest)**
 
+> 🎮 **Made for single-player and offline games.** Online games protected by anti-cheat (BattlEye, Easy Anti-Cheat, Vanguard…) aren't supported: anti-cheat systems don't allow extra components inside the game, so using it there could put your account at risk. The Manager blocks the ones it detects. Everywhere else, enjoy the extra smoothness.
+
 > **Current release: v0.5.0.** Includes the Manager startup crash fix, the Simplified
 > Chinese installer dynamic-field fix, a clarified close/tray behaviour, and an
 > experimental **statically validated** path for the exact recognized **591.86**

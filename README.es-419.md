@@ -16,6 +16,8 @@ Smooth Motion SM86 habilita la ruta de interpolación de fotogramas **NvPresent 
 
 **⬇ [Descargar Smooth Motion SM86 v0.5.0 para Windows](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/latest)**
 
+> 🎮 **Pensado para juegos de un jugador y offline.** Los juegos online con anti-cheat (BattlEye, Easy Anti-Cheat, Vanguard…) no están soportados: los sistemas anti-cheat no permiten componentes extra dentro del juego, así que usarlo ahí podría poner en riesgo tu cuenta. El Manager bloquea los que detecta. En todo lo demás, disfruta la fluidez extra.
+
 > **Versión actual: v0.5.0.** Incluye la corrección del fallo de inicio del Administrador, la corrección de los campos dinámicos del instalador en chino simplificado, un comportamiento de cierre/bandeja más claro y una ruta **validada estáticamente** experimental para la compilación exacta reconocida de NvPresent **591.86**. **616.64 sigue siendo la configuración dorada validada en vivo.** 591.86 *no* está validada en vivo todavía: pruébala y cuéntanoslo.
 
 **Versión preliminar:** [v0.5.2-alpha.1](https://github.com/xikarioz/Smooth-Motion-RTX30/releases/tag/v0.5.2-alpha.1) aborda los reportes abiertos del launcher y la bandeja. No reemplaza la versión estable enlazada arriba; lee el [alcance probado y los pendientes](RELEASE_0.5.2_ALPHA.md) antes de instalarla.
